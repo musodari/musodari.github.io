@@ -393,6 +393,96 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
 .top-top svg{width:18px;height:18px}
 .progress{position:fixed;top:0;left:0;height:3px;background:var(--terra);width:0;z-index:70;transition:width .1s linear}
 
+/* ---------- accordion: 장 하나 · 절 하나씩 펼치기 ---------- */
+.acc-boot section.ch > :not(h2):not(span.num){display:none!important}
+.acc-tools{
+  display:flex;align-items:center;justify-content:space-between;gap:9px 12px;flex-wrap:wrap;
+  margin:30px 0 4px;padding:11px 15px;background:#f5f1e8;border:1px solid var(--line-soft);border-radius:12px;
+}
+.acc-tools .note{font-size:13.5px;color:var(--sub);font-weight:600;line-height:1.55;text-indent:0}
+.acc-tools .note b{color:var(--navy);font-weight:800}
+.acc-btns{display:flex;gap:6px;flex:0 0 auto}
+.acc-all{
+  border:1px solid #d6cab4;background:#fff;color:var(--navy);font-family:inherit;font-size:13px;
+  font-weight:800;padding:7px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;
+  transition:background .15s,border-color .15s,color .15s;
+}
+.acc-all:hover{border-color:var(--navy-soft);background:#f7f9fc;color:var(--navy-deep)}
+.acc-all:active{background:#eaf0f7}
+
+.ch.acc{margin-top:10px}
+.ch.acc + .ch.acc{margin-top:10px}
+.ch.acc.open{margin-bottom:26px}
+.acc-tools + .ch.acc{margin-top:14px}
+.ch.acc > h2.ch-t{
+  margin:0;font-size:inherit;line-height:inherit;letter-spacing:normal;font-weight:inherit;color:inherit;
+}
+.ch-h{
+  width:100%;display:flex;align-items:center;gap:12px;text-align:left;font-family:inherit;
+  background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 17px;cursor:pointer;
+  box-shadow:var(--shadow);transition:border-color .15s,background .15s,box-shadow .15s;
+}
+.ch-h:hover{border-color:#cec2ac;background:#fffdf8}
+.ch.acc.open > h2 > .ch-h{border-color:#c6d3e4;background:#f4f7fb;box-shadow:0 1px 2px rgba(27,51,88,.06)}
+.ch-h .num{flex:0 0 auto;align-self:center}
+.ch-tx{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:3px}
+.ch-tt{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.025em;line-height:1.4}
+.ch.acc.open .ch-tt{color:var(--navy-deep)}
+.ch-desc{font-size:13.5px;color:var(--muted);line-height:1.45;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ch-cnt{
+  flex:0 0 auto;font-size:12px;font-weight:800;color:var(--terra);background:var(--terra-tint);
+  border:1px solid #ecd9c9;border-radius:999px;padding:3px 9px;letter-spacing:.02em;white-space:nowrap;
+}
+.chev-box{flex:0 0 auto;width:16px;height:16px;display:grid;place-items:center;margin-left:2px}
+.chev{
+  width:8px;height:8px;border-right:2px solid #b6a68c;border-bottom:2px solid #b6a68c;
+  transform:translateY(-1px) rotate(45deg);transition:transform .18s,border-color .18s;
+}
+[aria-expanded="true"] .chev{transform:translateY(2px) rotate(-135deg);border-color:var(--navy-soft)}
+
+.ch-body{padding:14px 0 2px}
+.ch-body[hidden]{display:none}
+.ch-lead > *:first-child{margin-top:0}
+
+.sec{margin:8px 0 0}
+.sec > h3{margin:0;padding:0;border:0;font-size:1em;line-height:1.5;scroll-margin-top:86px}
+.sec-h{
+  width:100%;display:flex;align-items:center;gap:10px;text-align:left;font-family:inherit;
+  background:#fdfbf6;border:1px solid var(--line-soft);border-left:4px solid #ddcdb6;border-radius:10px;
+  padding:11px 13px 11px 12px;cursor:pointer;
+  transition:background .15s,border-color .15s,border-left-color .15s;
+}
+.sec-h:hover{background:#f8f4ec;border-left-color:#c4b094}
+.sec.open > h3 > .sec-h{background:#eef2f7;border-color:#dbe3ee;border-left-color:var(--navy-soft)}
+.sec-h .st{flex:1 1 auto;min-width:0;font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.5}
+.sec-body{padding:14px 1px 4px}
+.sec-body[hidden]{display:none}
+.solo{margin:24px 0 8px}
+.solo .sec-h{background:#fff}
+
+/* toc 아코디언 */
+.toc-ch{margin:0}
+.toc-subs{display:none}
+.toc-ch.open > .toc-subs{display:block}
+.toc a.chap{display:flex;align-items:center;gap:8px;font-weight:700}
+.toc a.chap::after{
+  content:"";flex:0 0 auto;margin-left:auto;width:6px;height:6px;
+  border-right:1.8px solid #b3a894;border-bottom:1.8px solid #b3a894;
+  transform:translateY(-1px) rotate(45deg);transition:transform .18s,border-color .18s;
+}
+.toc-ch.open > a.chap::after{transform:translateY(2px) rotate(-135deg);border-color:var(--navy-soft)}
+@media(max-width:700px){
+  .ch-h{padding:13px 14px;gap:10px}
+  .ch-h .num{font-size:12.5px;padding:3px 9px}
+  .ch-tt{font-size:17px}
+  .ch-desc{display:none}
+  .sec-h{padding:10px 11px 10px 11px}
+  .sec-h .st{font-size:16.2px}
+  .acc-tools{padding:10px 12px}
+  .acc-tools .note{font-size:12.8px}
+  .acc-all{font-size:12.5px;padding:6px 11px}
+}
+
 /* ---------- responsive ---------- */
 @media(max-width:1080px){
   .shell{grid-template-columns:1fr;gap:0;padding:0 18px 80px}
@@ -454,8 +544,30 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
   h2.ch-t,h3{break-after:avoid;page-break-after:avoid}
   a{color:inherit;text-decoration:none}
   .copy-h .btn-copy{display:none}
+  .acc-boot section.ch > :not(h2):not(span.num){display:block!important}
+  /* 인쇄·PDF에서는 모든 장과 절을 그대로 펼쳐 낸다 */
+  .acc-tools,.chev-box,.acc-all{display:none!important}
+  .ch-body[hidden],.sec-body[hidden]{display:block!important}
+  .ch.acc{margin-top:30px}
+  .ch.acc + .ch.acc{margin-top:30px}
+  .ch.acc.open{margin-bottom:0}
+  .ch-h,.sec-h{
+    display:block!important;width:auto;padding:0!important;border:0!important;background:none!important;
+    box-shadow:none!important;text-align:left;
+  }
+  .ch-h .num{margin-right:7px;font-size:9.5pt;padding:1px 7px}
+  .ch-tx{display:block}
+  .ch-tt{font-size:15pt}
+  .ch-desc{display:block;font-size:9.5pt;white-space:normal}
+  .ch-cnt{display:none}
+  .ch-body{padding-top:8px}
+  .sec{margin-top:16px}
+  .sec-h{border-left:4px solid #ddcdb6!important;padding-left:10px!important}
+  .sec-h .st{font-size:12pt}
+  .sec-body{padding-top:8px}
 }
 </style>
+<script>document.documentElement.className += " acc-boot";window.setTimeout(function () { if (!document.querySelector("[data-acc-ready]")) { document.documentElement.className = document.documentElement.className.replace(" acc-boot", ""); } }, 2500);</script>
 </head>
 <body>
 <a class="skip" href="#main">본문으로 바로 가기</a>
@@ -1522,6 +1634,346 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
   drawerClose.addEventListener("click", closeDrawer);
   doc.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDrawer(); });
 
+  /* ================= 아코디언: 장 하나 · 절 하나씩 펼치기 ================= */
+  function qsa(sel, root) { return Array.prototype.slice.call((root || doc).querySelectorAll(sel)); }
+  function kid(el, cls) {
+    if (!el) return null;
+    for (var i = 0; i < el.children.length; i++) {
+      if (el.children[i].classList && el.children[i].classList.contains(cls)) return el.children[i];
+    }
+    return null;
+  }
+  function clean(t) { return (t || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim(); }
+  var topBar = doc.querySelector(".top");
+  function barOff() { return (topBar ? topBar.offsetHeight : 56) + 12; }
+
+  function makeChev() {
+    var box = doc.createElement("span");
+    box.className = "chev-box";
+    box.setAttribute("aria-hidden", "true");
+    var c = doc.createElement("span");
+    c.className = "chev";
+    box.appendChild(c);
+    return box;
+  }
+
+  /* h3 제목을 버튼으로 감싼다 (제목 자체는 그대로 두어 링크·검색이 살아 있게) */
+  function wrapSec(h3, secBody) {
+    var btn = doc.createElement("button");
+    btn.type = "button";
+    btn.className = "sec-h";
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-controls", secBody.id);
+    var sp = doc.createElement("span");
+    sp.className = "st";
+    sp.textContent = clean(h3.textContent);
+    btn.appendChild(sp);
+    btn.appendChild(makeChev());
+    h3.textContent = "";
+    h3.appendChild(btn);
+  }
+
+  function chParts(ch) {
+    var h2 = kid(ch, "ch-t");
+    return { h2: h2, btn: h2 ? h2.querySelector(".ch-h") : null, body: kid(ch, "ch-body") };
+  }
+  function isChOpen(ch) { var b = kid(ch, "ch-body"); return !!b && !b.hidden; }
+  function setCh(ch, open) {
+    var p = chParts(ch);
+    if (!p.body) return;
+    p.body.hidden = !open;
+    if (p.btn) p.btn.setAttribute("aria-expanded", open ? "true" : "false");
+    ch.classList.toggle("open", !!open);
+  }
+  function secParts(sec) {
+    var h3 = kid(sec, "h3");
+    return { h3: h3, btn: h3 ? h3.querySelector(".sec-h") : null, body: kid(sec, "sec-body") };
+  }
+  function isSecOpen(sec) { var b = kid(sec, "sec-body"); return !!b && !b.hidden; }
+  function setSec(sec, open) {
+    var p = secParts(sec);
+    if (!p.body) return;
+    p.body.hidden = !open;
+    if (p.btn) p.btn.setAttribute("aria-expanded", open ? "true" : "false");
+    sec.classList.toggle("open", !!open);
+  }
+  function closeSecsIn(ch) { qsa(".sec", ch).forEach(function (s) { if (isSecOpen(s)) setSec(s, false); }); }
+
+  /* 위쪽 장을 접어 화면이 위로 밀려도, 누른 제목은 늘 상단 바 아래에 남긴다 */
+  function keepInView(el) {
+    if (!el) return;
+    var r = el.getBoundingClientRect();
+    var off = barOff();
+    if (r.top < off) window.scrollTo({ top: Math.max(0, window.scrollY + r.top - off), behavior: "auto" });
+  }
+
+  function setTocGroup(book, chId) {
+    var toc = (book && book.id === "book-b") ? tocs.b : tocs.a;
+    if (!toc || !chId) return;
+    var group = null;
+    qsa(".toc-ch", toc).forEach(function (g) {
+      if (g.querySelector('a[href="#' + chId + '"]')) group = g;
+    });
+    qsa(".toc-ch", toc).forEach(function (g) { g.classList.toggle("open", g === group); });
+  }
+
+  function buildAccordion() {
+    Object.keys(books).forEach(function (bk) {
+      var book = books[bk];
+      if (!book || book.getAttribute("data-acc-ready")) return;
+      book.setAttribute("data-acc-ready", "1");
+
+      var desc = {};
+      qsa('.idx a[href^="#"]', book).forEach(function (a) {
+        var d = a.querySelector(".d");
+        if (d) desc[a.getAttribute("href").slice(1)] = clean(d.textContent);
+      });
+
+      /* 1단계: 장 */
+      qsa("section.ch", book).forEach(function (ch, ci) {
+        ch.classList.add("acc");
+        var h2 = null, num = null;
+        Array.prototype.slice.call(ch.children).forEach(function (e) {
+          if (!h2 && e.tagName === "H2") h2 = e;
+          else if (!h2 && !num && e.classList.contains("num")) num = e;
+        });
+        if (!h2) return;
+
+        var nodes = [], grab = false;
+        Array.prototype.slice.call(ch.childNodes).forEach(function (n) {
+          if (n === h2) { grab = true; return; }
+          if (!grab) return;
+          if (n.nodeType === 8) return;
+          if (n.nodeType === 3 && !n.textContent.trim()) return;
+          nodes.push(n);
+        });
+        nodes.forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+
+        var body = doc.createElement("div");
+        body.className = "ch-body";
+        body.id = (ch.id || "ch-" + bk + ci) + "-body";
+        body.hidden = true;
+
+        var lead = null, sec = null, secBody = null, total = 0;
+        nodes.forEach(function (n) {
+          if (n.nodeType === 1 && n.tagName === "H3") {
+            sec = doc.createElement("div");
+            sec.className = "sec";
+            secBody = doc.createElement("div");
+            secBody.className = "sec-body";
+            secBody.id = (n.id || body.id + "-s" + total) + "-body";
+            secBody.hidden = true;
+            wrapSec(n, secBody);
+            sec.appendChild(n);
+            sec.appendChild(secBody);
+            body.appendChild(sec);
+            total++;
+          } else if (sec) {
+            secBody.appendChild(n);
+          } else {
+            if (!lead) { lead = doc.createElement("div"); lead.className = "ch-lead"; body.appendChild(lead); }
+            lead.appendChild(n);
+          }
+        });
+
+        var btn = doc.createElement("button");
+        btn.type = "button";
+        btn.className = "ch-h";
+        btn.setAttribute("aria-expanded", "false");
+        btn.setAttribute("aria-controls", body.id);
+        if (num) btn.appendChild(num);
+        var tx = doc.createElement("span");
+        tx.className = "ch-tx";
+        var tt = doc.createElement("span");
+        tt.className = "ch-tt";
+        tt.textContent = clean(h2.textContent);
+        tx.appendChild(tt);
+        if (desc[ch.id]) {
+          var de = doc.createElement("span");
+          de.className = "ch-desc";
+          de.textContent = desc[ch.id];
+          tx.appendChild(de);
+        }
+        btn.appendChild(tx);
+        if (total) {
+          var cn = doc.createElement("span");
+          cn.className = "ch-cnt";
+          cn.textContent = total + "절";
+          btn.appendChild(cn);
+        }
+        btn.appendChild(makeChev());
+        h2.textContent = "";
+        h2.appendChild(btn);
+        ch.appendChild(body);
+      });
+
+      /* 장 밖의 h3(이 교재를 쓰는 법)도 같은 모양으로 접을 수 있게 */
+      qsa("h3", book).forEach(function (h) {
+        if (h.querySelector(".sec-h")) return;
+        var host = h.parentNode;
+        if (!host || !host.classList) return;
+        if (host.classList.contains("ch-body") || host.classList.contains("sec-body") || host.classList.contains("sec")) return;
+        var nodes = [], grab = false;
+        Array.prototype.slice.call(host.childNodes).forEach(function (n) {
+          if (n === h) { grab = true; return; }
+          if (!grab) return;
+          if (n.nodeType === 8) return;
+          if (n.nodeType === 1 && (n.tagName === "H2" || n.tagName === "H3" || (n.classList && n.classList.contains("ch")))) { grab = false; return; }
+          if (n.nodeType === 3 && !n.textContent.trim()) return;
+          nodes.push(n);
+        });
+        var sec = doc.createElement("div");
+        sec.className = "sec solo";
+        var sb = doc.createElement("div");
+        sb.className = "sec-body";
+        sb.id = (h.id || "solo-" + bk) + "-body";
+        sb.hidden = true;
+        wrapSec(h, sb);
+        nodes.forEach(function (n) { sb.appendChild(n); });
+        host.insertBefore(sec, h);
+        sec.appendChild(h);
+        sec.appendChild(sb);
+      });
+
+      /* 모두 펼치기 · 모두 접기 + 장 수 안내 */
+      var firstCh = book.querySelector("section.ch");
+      if (firstCh && !book.querySelector(".acc-tools")) {
+        var tools = doc.createElement("div");
+        tools.className = "acc-tools";
+        var note = doc.createElement("span");
+        note.className = "note";
+        var nn = doc.createElement("b");
+        nn.textContent = (bk === "a" ? "제1부 " : "설치·연결편 ") + qsa("section.ch", book).length + "개 장";
+        note.appendChild(nn);
+        note.appendChild(doc.createTextNode(" · 장을 누르면 절이 열리고, 절을 누르면 내용이 열립니다"));
+        var btns = doc.createElement("span");
+        btns.className = "acc-btns";
+        ["open", "close"].forEach(function (k) {
+          var b = doc.createElement("button");
+          b.type = "button";
+          b.className = "acc-all";
+          b.setAttribute("data-acc", k);
+          b.textContent = (k === "open") ? "모두 펼치기" : "모두 접기";
+          btns.appendChild(b);
+        });
+        tools.appendChild(note);
+        tools.appendChild(btns);
+        firstCh.parentNode.insertBefore(tools, firstCh);
+      }
+
+      /* 목차도 같은 규칙으로: 장을 열면 그 장의 절만 보인다 */
+      var toc = tocs[bk];
+      if (toc && !toc.getAttribute("data-acc-ready")) {
+        toc.setAttribute("data-acc-ready", "1");
+        var nav = toc.querySelector("nav");
+        if (nav) {
+          var cur = null, subs = null;
+          Array.prototype.slice.call(nav.children).forEach(function (el) {
+            if (el.tagName !== "A") { cur = null; subs = null; return; }
+            var href = el.getAttribute("href") || "";
+            if (/^#b[12]-\d+$/.test(href)) {
+              el.classList.add("chap");
+              cur = doc.createElement("div");
+              cur.className = "toc-ch";
+              subs = null;
+              nav.insertBefore(cur, el);
+              cur.appendChild(el);
+            } else if (el.classList.contains("sub") && cur) {
+              if (!subs) { subs = doc.createElement("div"); subs.className = "toc-subs"; cur.appendChild(subs); }
+              subs.appendChild(el);
+            } else {
+              cur = null;
+              subs = null;
+            }
+          });
+        }
+      }
+    });
+    doc.documentElement.className = doc.documentElement.className.replace(" acc-boot", "");
+  }
+
+  function goTo(id, smooth) {
+    var el = doc.getElementById(id);
+    if (!el || !el.closest) return false;
+    var book = el.closest(".book");
+    if (book) setBook(book.id === "book-b" ? "b" : "a", false);
+    var ch = el.closest(".ch");
+    if (ch) {
+      if (!isChOpen(ch)) {
+        qsa("section.ch", book).forEach(function (c) { if (c !== ch) setCh(c, false); });
+        closeSecsIn(ch);
+        setCh(ch, true);
+      }
+      var sec = el.closest(".sec");
+      if (sec) { closeSecsIn(ch); setSec(sec, true); }
+      setTocGroup(book, ch.id);
+    } else {
+      var solo = el.closest(".solo");
+      if (solo) setSec(solo, true);
+    }
+    closeDrawer();
+    var y = window.scrollY + el.getBoundingClientRect().top - barOff();
+    window.scrollTo({ top: Math.max(0, y), behavior: smooth ? "smooth" : "auto" });
+    try { history.replaceState(null, "", location.pathname + location.search + "#" + id); } catch (e) {}
+    return true;
+  }
+
+  doc.addEventListener("click", function (ev) {
+    if (!ev.target.closest) return;
+    var all = ev.target.closest(".acc-all");
+    if (all) {
+      var book = all.closest(".book");
+      var open = all.getAttribute("data-acc") === "open";
+      qsa("section.ch", book).forEach(function (c) { setCh(c, open); });
+      qsa(".sec", book).forEach(function (s) { setSec(s, open); });
+      var toc = (book.id === "book-b") ? tocs.b : tocs.a;
+      if (toc) qsa(".toc-ch", toc).forEach(function (g) { g.classList.toggle("open", open); });
+      return;
+    }
+    var cb = ev.target.closest(".ch-h");
+    if (cb) {
+      var ch = cb.closest(".ch");
+      var book2 = ch.closest(".book");
+      if (cb.getAttribute("aria-expanded") === "true") {
+        setCh(ch, false);
+      } else {
+        qsa("section.ch", book2).forEach(function (c) { if (c !== ch) setCh(c, false); });
+        closeSecsIn(ch);
+        setCh(ch, true);
+        setTocGroup(book2, ch.id);
+      }
+      keepInView(cb);
+      return;
+    }
+    var sb = ev.target.closest(".sec-h");
+    if (sb) {
+      var sec = sb.closest(".sec");
+      var inCh = sec.closest(".ch");
+      var book3 = sec.closest(".book");
+      if (sb.getAttribute("aria-expanded") === "true") {
+        setSec(sec, false);
+      } else {
+        if (inCh) closeSecsIn(inCh);
+        else qsa(".sec.solo", book3).forEach(function (s) { if (s !== sec) setSec(s, false); });
+        setSec(sec, true);
+      }
+      keepInView(sb);
+      return;
+    }
+  });
+
+  doc.addEventListener("click", function (ev) {
+    if (!ev.target.closest) return;
+    var a = ev.target.closest('a[href^="#"]');
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    if (href.length < 2) return;
+    var id = href.slice(1);
+    if (!doc.getElementById(id)) return;
+    ev.preventDefault();
+    goTo(id, true);
+  });
+
   /* ---- toast ---- */
   var toast = doc.getElementById("toast");
   var toastTimer = null;
@@ -1651,7 +2103,9 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
       for (var i = 0; i < hs.length; i++) marks.push(hs[i]);
     });
     for (var i = 0; i < marks.length; i++) {
-      var top = marks[i].getBoundingClientRect().top;
+      var rect = marks[i].getBoundingClientRect();
+      if (!rect.height) continue;
+      var top = rect.top;
       if (top < 150 && top > bestTop) { bestTop = top; best = marks[i]; }
     }
     for (var j = 0; j < tocLinks.length; j++) {
@@ -1677,6 +2131,7 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
   totop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
 
   /* ---- boot ---- */
+  buildAccordion();
   var start = "a";
   if (location.hash.indexOf("#b2") === 0) start = "b";
   else if (location.hash.indexOf("#b1") === 0) start = "a";
@@ -1687,9 +2142,14 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
   paintTOC();
 
   if (location.hash && location.hash.length > 1) {
-    var target = doc.getElementById(location.hash.slice(1));
-    if (target) setTimeout(function () { target.scrollIntoView({ block: "start" }); }, 60);
+    setTimeout(function () { goTo(location.hash.slice(1), false); }, 80);
+    window.addEventListener("load", function () {
+      if (location.hash.length > 1) goTo(location.hash.slice(1), false);
+    });
   }
+  window.addEventListener("hashchange", function () {
+    if (location.hash.length > 1) goTo(location.hash.slice(1), true);
+  });
 })();
 </script>
 </body>
