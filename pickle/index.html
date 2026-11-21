@@ -553,16 +553,19 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
   .ch.acc.open{margin-bottom:0}
   .ch-h,.sec-h{
     display:block!important;width:auto;padding:0!important;border:0!important;background:none!important;
-    box-shadow:none!important;text-align:left;
+    box-shadow:none!important;text-align:left;border-radius:0!important;
   }
-  .ch-h .num{margin-right:7px;font-size:9.5pt;padding:1px 7px}
+  .ch-h .num{
+    margin-right:7px;font-size:9.5pt;padding:1px 7px;background:none!important;
+    color:var(--navy)!important;border:1px solid #b9a98f!important;
+  }
   .ch-tx{display:block}
   .ch-tt{font-size:15pt}
   .ch-desc{display:block;font-size:9.5pt;white-space:normal}
   .ch-cnt{display:none}
   .ch-body{padding-top:8px}
   .sec{margin-top:16px}
-  .sec-h{border-left:4px solid #ddcdb6!important;padding-left:10px!important}
+  .sec-h{border-left:4px solid #ddcdb6!important;padding-left:10px!important;border-radius:0!important}
   .sec-h .st{font-size:12pt}
   .sec-body{padding-top:8px}
 }
@@ -1972,6 +1975,19 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
     if (!doc.getElementById(id)) return;
     ev.preventDefault();
     goTo(id, true);
+  });
+
+  /* 인쇄·PDF에서는 원래 열려 있지 않던 접힘 상자도 함께 편다 */
+  window.addEventListener("beforeprint", function () {
+    qsa("details").forEach(function (d) {
+      if (!d.open) { d.open = true; d.setAttribute("data-print-open", "1"); }
+    });
+  });
+  window.addEventListener("afterprint", function () {
+    qsa("details[data-print-open]").forEach(function (d) {
+      d.open = false;
+      d.removeAttribute("data-print-open");
+    });
   });
 
   /* ---- toast ---- */
