@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>최학룡 모바일 명함 | 최샘 · 최디터</title>
+  <meta name="description" content="스마트소셜협동조합 이사장 · 시골사람들 대표 · 16년차 AI 및 마케팅 전문강사 최학룡(최샘·최디터)의 모바일 명함입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="최학룡 모바일 명함 | 최샘 · 최디터">
+  <meta property="og:description" content="흙에서 배운 정직함 위에 AI와 디지털 마케팅을 세우다 | 시골사람들 대표 · 16년차 전문강사">
+  <meta property="og:image" content="https://musodari.github.io/profile.jpg">
+  <meta property="og:image:width" content="606">
+  <meta property="og:image:height" content="606">
+  <meta property="og:url" content="https://musodari.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="최학룡 모바일 명함 | 최샘 · 최디터">
+  <meta name="twitter:description" content="흙에서 배운 정직함 위에 AI와 디지털 마케팅을 세우다 | 시골사람들 대표 · 16년차 전문강사">
+  <meta name="twitter:image" content="https://musodari.github.io/profile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Gowun+Batang:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #193252;
+      --primary-dark: #0f1f33;
+      --primary-light: #284b77;
+      --accent: #c48937;
+      --accent-light: #e0a552;
+      --green: #2b684b;
+      --bg: #f4f5f8;
+      --card: #ffffff;
+      --ink: #1f2937;
+      --sub: #4b5563;
+      --muted: #6b7280;
+      --line: #e2e6ea;
+      --line-light: #f1f3f5;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--card);
+      min-height: 100vh;
+      padding-bottom: 84px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    /* 히어로 헤더 */
+    .hero {
+      background: linear-gradient(155deg, var(--primary-dark) 0%, var(--primary) 65%, var(--primary-light) 100%);
+      color: #ffffff;
+      padding: 44px 22px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 170px;
+      height: 170px;
+      background: radial-gradient(circle, rgba(196, 137, 55, 0.28) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .profile-img-wrap {
+      display: inline-block;
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3.5px solid var(--accent);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+      margin-bottom: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+    .profile-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .name-title {
+      font-size: 31px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .name-title span {
+      font-size: 17px;
+      font-weight: 500;
+      color: #cbd5e1;
+      margin-left: 6px;
+    }
+    .sub-names {
+      display: inline-flex;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .sub-names .pill {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+    .hero-role {
+      font-size: 14.5px;
+      color: #b0c4de;
+      font-weight: 500;
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+    .hero-quote {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.5;
+      padding: 12px 18px;
+      background: rgba(0, 0, 0, 0.22);
+      border-radius: 12px;
+      margin-bottom: 22px;
+      border-left: 3px solid var(--accent);
+      text-align: left;
+    }
+    .hero-quote em {
+      color: var(--accent-light);
+      font-style: normal;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+    .hero-btns a {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: #ffffff;
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 11px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s;
+    }
+    .hero-btns a.accent {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    /* 본문 공통 섹션 */
+    section {
+      padding: 32px 20px 10px;
+    }
+    .kicker {
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+      display: block;
+    }
+    h2 {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    /* 3대 정체성 카드 */
+    .identity-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .id-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .id-card.c1 { border-left: 4px solid var(--green); }
+    .id-card.c2 { border-left: 4px solid var(--primary); }
+    .id-card.c3 { border-left: 4px solid var(--accent); }
+    
+    .id-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .id-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .id-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .id-card.c1 .id-tag { background: #e8f5e9; color: var(--green); }
+    .id-card.c2 .id-tag { background: #e0f2fe; color: var(--primary); }
+    .id-card.c3 .id-tag { background: #fef3c7; color: var(--accent); }
+    .id-desc {
+      font-size: 14px;
+      color: var(--sub);
+      line-height: 1.55;
+    }
+
+    /* 걸어온 길 (타임라인) */
+    .timeline {
+      position: relative;
+      border-left: 2px solid var(--line);
+      margin-left: 10px;
+      padding-left: 18px;
+      padding-top: 4px;
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 22px;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--line);
+    }
+    .timeline-item.active::before {
+      background: var(--accent);
+    }
+    .timeline-year {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 2px;
+    }
+    .timeline-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+    .timeline-body {
+      font-size: 13.5px;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+
+    /* 주요 경력 및 공공 자문 테이블 */
+    .career-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      margin-top: 8px;
+    }
+    .career-table th {
+      background: var(--line-light);
+      padding: 8px 10px;
+      color: var(--primary-dark);
+      font-weight: 700;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+    .career-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--line-light);
+      vertical-align: top;
+    }
+    .career-table .col-year {
+      width: 75px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 12.5px;
+    }
+    .career-table .col-org {
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .career-table .col-role {
+      width: 80px;
+      text-align: right;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    /* 전문 분야 카드 */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .feature-box {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .feature-box h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .feature-box p {
+      font-size: 13.5px;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+
+    /* 접기/펼치기 디테일즈 */
+    details {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      margin-top: 14px;
+      overflow: hidden;
+    }
+    details summary {
+      padding: 14px 16px;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    details summary::after {
+      content: "▼";
+      font-size: 11px;
+      color: var(--muted);
+      transition: transform 0.2s;
+    }
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
+    .details-body {
+      padding: 0 16px 14px;
+      border-top: 1px dashed var(--line);
+    }
+
+    /* 학력 및 논문 */
+    .edu-box {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 14px;
+      border-bottom: 1px dashed var(--line-light);
+    }
+    .edu-item:last-child { border-bottom: none; }
+    .edu-title { font-weight: 700; color: var(--primary-dark); }
+    .edu-desc { color: var(--sub); }
+    .paper-item {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line-light);
+      font-size: 13px;
+      color: var(--sub);
+    }
+    .paper-item strong { color: var(--accent); }
+
+    /* 링크 그리드 */
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .link-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 10px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .link-btn:hover {
+      background: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(25, 50, 82, 0.08);
+    }
+    .link-btn .icon {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    /* 푸터 */
+    footer {
+      text-align: center;
+      padding: 30px 20px 10px;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--line-light);
+      margin-top: 20px;
+    }
+    footer p { margin-bottom: 4px; }
+
+    /* 하단 플로팅 바 */
+    .floating-bar {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--line);
+      padding: 10px 16px;
+      display: flex;
+      gap: 8px;
+      z-index: 100;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+    }
+    .floating-bar a {
+      flex: 1;
+      text-align: center;
+      padding: 11px 0;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 700;
+    }
+    .floating-bar .btn-call {
+      background: var(--primary);
+      color: #ffffff;
+    }
+    .floating-bar .btn-mail {
+      background: #f1f5f9;
+      color: var(--primary-dark);
+      border: 1px solid var(--line);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <!-- 상단 히어로 -->
+    <header class="hero">
+      <div class="profile-img-wrap">
+        <img src="profile.jpg" alt="최학룡 프로필 사진">
+      </div>
+      <h1 class="name-title">최학룡 <span>崔學龍</span></h1>
+      
+      <div class="sub-names">
+        <span class="pill">#최샘</span>
+        <span class="pill">#최디터</span>
+      </div>
+
+      <div class="hero-role">
+        스마트소셜협동조합 이사장 · 시골사람들 대표<br>
+        AI 숏폼 & 디지털 마케팅 전문강사 · 네이버 인플루언서
+      </div>
+
+      <div class="hero-quote">
+        "산업공학의 <em>체계</em>와 경영학의 <em>혜안</em>,<br>
+        흙에서 배운 <em>정직함</em> 위에 AI와 실전 마케팅을 세웁니다."
+      </div>
+
+      <div class="hero-btns">
+        <a href="tel:010-6610-3269" class="accent">📞 강의·자문 문의</a>
+        <a href="mailto:musodari@gmail.com">✉️ 이메일</a>
+        <a href="https://blog.naver.com/muso0523" target="_blank">✍️ 최디터 블로그</a>
+      </div>
+    </header>
+
+    <!-- 1. 세 가지 이름, 하나의 진심 -->
+    <section>
+      <span class="kicker">THREE IDENTITIES</span>
+      <h2>세 가지 이름, 하나의 진심</h2>
+      
+      <div class="identity-cards">
+        <div class="id-card c1">
+          <div class="id-header">
+            <span class="id-name">🌾 최학룡 · 일구는 사람</span>
+            <span class="id-tag">현장 실천가</span>
+          </div>
+          <p class="id-desc">
+            전남 화순에서 농산물 가공식품 브랜드 <strong>'시골사람들'</strong>을 이끌며, <strong>스마트소셜협동조합 이사장</strong>으로서 지역 농업의 부가가치 창출과 지속 가능한 공동체 경제를 현장에서 실천합니다.
+          </p>
+        </div>
+
+        <div class="id-card c2">
+          <div class="id-header">
+            <span class="id-name">🎓 최샘 · 가르치는 사람</span>
+            <span class="id-tag">16년차 교육자</span>
+          </div>
+          <p class="id-desc">
+            2010년부터 전남농업기술원, 소상공인시장진흥공단, 중진공, 세종대·숙명여대·서울벤처대학원대학교 등에서 강의해 온 베테랑. <strong>초보자도 당일 완성하는 100% 실습 교육</strong>을 펼칩니다.
+          </p>
+        </div>
+
+        <div class="id-card c3">
+          <div class="id-header">
+            <span class="id-name">✍️ 최디터 · 기록하는 사람</span>
+            <span class="id-tag">크리에이터</span>
+          </div>
+          <p class="id-desc">
+            고용노동부 영상 창작자 양성과정 전담 강사 경력과 네이버 공식 인플루언서 역량을 바탕으로, <strong>생성형 AI 숏폼(클립·쇼츠)</strong>과 블로그를 결합한 차세대 콘텐츠 브랜딩을 이끕니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 걸어온 길 (스토리 타임라인) -->
+    <section>
+      <span class="kicker">MY JOURNEY</span>
+      <h2>걸어온 길</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">1. 공학과 경영학의 융합</div>
+          <div class="timeline-title">산업공학 학사 & 경영학 석사</div>
+          <p class="timeline-body">
+            전남대 공대 산업공학과를 졸업하고 동신대 대학원에서 경영학 석사(논문: 긍정심리자본 연구)를 마쳤습니다. 시스템적 공학 마인드와 조직 경영의 통찰이 교육의 단단한 밑바탕이 되었습니다.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2. 소셜미디어와 지역 활성화 (2010 ~ 2014)</div>
+          <div class="timeline-title">SNS 마케팅·공공 소통의 선구자</div>
+          <p class="timeline-body">
+            (사)스마트소셜연구회 부회장, 전남지방공무원교육원 외래강사, 세종대·숙명여대 외래강사로 활동하며 광주시 빛창블로그, 공공기관 및 농어촌공사 재능뱅크 SNS 홍보 교육을 선도했습니다.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">3. 스마트스토어 & 농식품 유통 (2015 ~ 2020)</div>
+          <div class="timeline-title">온라인 쇼핑몰 구축과 경영 자문</div>
+          <p class="timeline-body">
+            전라남도 농식품가공유통 컨설턴트, 광주경제고용진흥원 자문위원으로 활약하며 '빛고을장터', '한국인의밥상' 등 10여 개 쇼핑몰을 직접 컨설팅하고 소상공인시장진흥공단 튼튼창업 강좌를 이끌었습니다.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">4. 1인 미디어 영상과 협동조합 (2017 ~ 2023)</div>
+          <div class="timeline-title">영상 콘텐츠 양성 & 스마트소셜협동조합 이사장</div>
+          <p class="timeline-body">
+            스마트소셜협동조합 이사장에 취임하고, 고용노동부 1인 미디어 영상창작자 양성과정(1·2기) 및 OBS 3채널 생방송을 진행하며 영상 미디어 교육 역량을 고도화했습니다.
+          </p>
+        </div>
+
+        <div class="timeline-item active">
+          <div class="timeline-year">5. AI 숏폼 & 디지털 전환 (현재)</div>
+          <div class="timeline-title">생성형 AI 숏폼 & 챗GPT 실무 교육</div>
+          <p class="timeline-body">
+            전남농업기술원 생명농업대학 디지털마케팅, 챗GPT 전자책 창작소, ChatGPT 농업적 활용 등 최신 생성형 AI와 숏폼 콘텐츠를 접목한 실무 교육을 활발히 펼치고 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 주요 경력 및 공공·기관 자문 -->
+    <section>
+      <span class="kicker">CAREER & ADVISORY</span>
+      <h2>주요 경력 및 자문</h2>
+
+      <table class="career-table">
+        <thead>
+          <tr>
+            <th>기관 / 단체</th>
+            <th>직위</th>
+            <th style="text-align:right;">기간</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-org"><strong>스마트소셜협동조합</strong></td>
+            <td class="col-role">이사장</td>
+            <td class="col-year">2019~2025</td>
+          </tr>
+          <tr>
+            <td class="col-org"><strong>(사)스마트소셜연구회</strong></td>
+            <td class="col-role">부회장</td>
+            <td class="col-year">2012~2020</td>
+          </tr>
+          <tr>
+            <td class="col-org"><strong>시골사람들</strong></td>
+            <td class="col-role">대표</td>
+            <td class="col-year">현재</td>
+          </tr>
+          <tr>
+            <td class="col-org"><strong>(재)광주광역시 경제고용진흥원</strong></td>
+            <td class="col-role">자문위원</td>
+            <td class="col-year">2016~2018</td>
+          </tr>
+          <tr>
+            <td class="col-org"><strong>지리산권 관광아카데미 마케팅과정</strong></td>
+            <td class="col-role">자문교수</td>
+            <td class="col-year">2016</td>
+          </tr>
+          <tr>
+            <td class="col-org"><strong>서울벤처대학원대학교</strong></td>
+            <td class="col-role">자문강사</td>
+            <td class="col-year">2015~2017</td>
+          </tr>
+          <tr>
+            <td class="col-org"><strong>(사)광주국제행사성공시민협의회</strong></td>
+            <td class="col-role">자문위원</td>
+            <td class="col-year">2013~2015</td>
+          </tr>
+          <tr>
+            <td class="col-org"><strong>세종대학교 바이럴마케팅 CEO과정</strong></td>
+            <td class="col-role">외래강사</td>
+            <td class="col-year">2014</td>
+          </tr>
+          <tr>
+            <td class="col-org"><strong>전남지방공무원교육원</strong></td>
+            <td class="col-role">외래강사</td>
+            <td class="col-year">2012, 2014</td>
+          </tr>
+          <tr>
+            <td class="col-org"><strong>숙명여자대학교 안전창업/판매촉진</strong></td>
+            <td class="col-role">외래강사</td>
+            <td class="col-year">2012</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 4. 전문 강의 분야 & 출강 이력 -->
+    <section>
+      <span class="kicker">LECTURES & EXPERTISE</span>
+      <h2>전문 강의 분야</h2>
+
+      <div class="features">
+        <div class="feature-box">
+          <h4>🤖 생성형 AI & 숏폼 영상 제작</h4>
+          <p>전남농업기술센터 ChatGPT 농업 활용, 챗GPT 전자책 창작소, 모바일 AI 도구를 활용한 15~60초 숏폼(클립·쇼츠) 기획 및 원스톱 제작 실습</p>
+        </div>
+
+        <div class="feature-box">
+          <h4>🛒 소상공인·농식품 스마트스토어 실무</h4>
+          <p>중진공, 소상공인시장진흥공단 튼튼창업, 온채널 라이브커머스, 상품 소싱부터 상세페이지·검색 SEO까지 매출 직결 쇼핑몰 구축</p>
+        </div>
+
+        <div class="feature-box">
+          <h4>🎬 1인 미디어 영상콘텐츠 & 유튜브</h4>
+          <p>고용노동부 1인 미디어 창작자 양성과정(1·2기), OBS 3채널 생방송 송출 실습, 창평 달팽이 유튜버 등 카메라 무빙부터 스마트폰 편집까지</p>
+        </div>
+
+        <div class="feature-box">
+          <h4>🌾 농식품 로컬푸드 & 가공유통 마케팅</h4>
+          <p>전남농업기술원 생명농업대학 디지털마케팅, 신안군·고흥군·장흥군 농업대학, 전남 마을로 플러스 청년활동가 마케팅 코칭</p>
+        </div>
+      </div>
+
+      <!-- 전체 출강 이력 아코디언 -->
+      <details>
+        <summary>주요 출강처 및 연도별 강의 이력 전체보기</summary>
+        <div class="details-body">
+          <table class="career-table">
+            <tbody>
+              <tr><td class="col-year">2023~2025</td><td class="col-org">전남농업기술원 생명농업대학 디지털마케팅과정</td></tr>
+              <tr><td class="col-year">2025.04~05</td><td class="col-org">챗GPT 전자책 창작소</td></tr>
+              <tr><td class="col-year">2024.10</td><td class="col-org">전남농업기술센터 ChatGPT 농업적 활용</td></tr>
+              <tr><td class="col-year">2023~2024</td><td class="col-org">신안군농업기술센터 농업대학 온라인마케팅과정</td></tr>
+              <tr><td class="col-year">2023</td><td class="col-org">창평 도시재생지원센터 달팽이 유튜버 교육프로그램</td></tr>
+              <tr><td class="col-year">2023</td><td class="col-org">전남 마을로 플러스 청년활동가 온라인 마케팅</td></tr>
+              <tr><td class="col-year">2021~2023</td><td class="col-org">장흥군 마케터양성 과정 (1기~3기)</td></tr>
+              <tr><td class="col-year">2021</td><td class="col-org">중소기업진흥원 스마트스토어 운영 온·오프라인 강좌</td></tr>
+              <tr><td class="col-year">2020~2022</td><td class="col-org">소상공인시장진흥공단 튼튼창업 (스마트스토어/라이브커머스)</td></tr>
+              <tr><td class="col-year">2021</td><td class="col-org">고흥군 농업인 경영마케팅 교육 / 의정부 신중년창직교육원</td></tr>
+              <tr><td class="col-year">2020~2021</td><td class="col-org">경기도 일자리재단 가치거래자 양성과정</td></tr>
+              <tr><td class="col-year">2017~2025</td><td class="col-org">빛고을장터 및 '한국인의밥상' 운영·유통 컨설팅</td></tr>
+              <tr><td class="col-year">2017~2019</td><td class="col-org">전라남도 농식품가공유통 컨설턴트 지원사업</td></tr>
+              <tr><td class="col-year">2018</td><td class="col-org">충청북도 자치연수원 사물인터넷과 농업활용 전략</td></tr>
+              <tr><td class="col-year">2017</td><td class="col-org">고용노동부 1인 미디어 영상콘텐츠 창작자 양성과정 (1, 2기)</td></tr>
+              <tr><td class="col-year">2017</td><td class="col-org">조선대 취업아카데미, 담양도립대, 순천·보성·영암 농업기술센터</td></tr>
+              <tr><td class="col-year">2017</td><td class="col-org">광주포럼 OBS 3채널(유튜브, 트위치, 팟플레이어) 동시 생방송</td></tr>
+              <tr><td class="col-year">2015~현재</td><td class="col-org">서울벤처대학원대학교 CEO SNS MBA과정</td></tr>
+              <tr><td class="col-year">2012~2014</td><td class="col-org">한국농어촌공사 스마일재능뱅크 찾아가는 SNS농어촌교육</td></tr>
+              <tr><td class="col-year">2010~2019</td><td class="col-org">광주시청, 순천시청, 광양시청, 강진군청, 완도군청 등 다수 출강</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <!-- 5. 학력 및 연구 실적 -->
+    <section>
+      <span class="kicker">ACADEMIC BACKGROUND</span>
+      <h2>학력 및 연구</h2>
+
+      <div class="edu-box">
+        <div class="edu-item">
+          <span class="edu-title">동신대학교 대학원</span>
+          <span class="edu-desc">경영학과 경영학 석사</span>
+        </div>
+        <div class="edu-item">
+          <span class="edu-title">전남대학교 공과대학</span>
+          <span class="edu-desc">산업공학과 공학 학사</span>
+        </div>
+        <div class="paper-item">
+          <strong>석사학위 논문 (2022)</strong><br>
+          〈긍정심리자본이 심리적 주인의식과 직무성과에 미치는 영향에 관한 연구〉
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 최샘 강의의 3가지 원칙 -->
+    <section>
+      <span class="kicker">PHILOSOPHY</span>
+      <h2>최샘 강의의 3가지 원칙</h2>
+
+      <div class="features">
+        <div class="feature-box">
+          <h4>1. 복잡한 이론 대신 '당일 결과물'</h4>
+          <p>수업이 끝났을 때 수강생의 손에 완성된 영상, 등록된 상품, 발행된 포스팅이 쥐어지는 100% 현장 실습형 강의를 고집합니다.</p>
+        </div>
+
+        <div class="feature-box">
+          <h4>2. 초보자도 막힘없는 '눈높이 해설'</h4>
+          <p>어려운 전문 용어 대신 일상의 언어로, 막혔던 지점을 하나씩 함께 풀어가며 배움의 문턱을 확실히 낮춥니다.</p>
+        </div>
+
+        <div class="feature-box">
+          <h4>3. 단순 제작을 넘어 '실제 유통과 매출'로</h4>
+          <p>만드는 것에서 멈추지 않고, 고객이 찾아오고 스토어의 매출로 직결되는 실전 비즈니스 관점을 전합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. 공식 채널 및 바로가기 -->
+    <section>
+      <span class="kicker">CONTACT & CHANNELS</span>
+      <h2>채널 및 바로가기</h2>
+
+      <div class="links-grid">
+        <a href="https://blog.naver.com/muso0523" target="_blank" class="link-btn">
+          <span class="icon">✍️</span>
+          <span>최디터 네이버 블로그</span>
+        </a>
+        <a href="tel:010-6610-3269" class="link-btn">
+          <span class="icon">📞</span>
+          <span>강의 및 컨설팅 문의</span>
+        </a>
+        <a href="mailto:musodari@gmail.com" class="link-btn">
+          <span class="icon">✉️</span>
+          <span>지메일 메일 보내기</span>
+        </a>
+        <a href="https://map.naver.com/p/search/%ED%99%94%EC%88%9C%EC%9D%8D%20%EA%B4%91%EB%8D%95%EB%A1%9C%20169-4" target="_blank" class="link-btn">
+          <span class="icon">🏢</span>
+          <span>화순 연구소·사무실</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+      <p><strong>최학룡 (최샘 · 최디터)</strong></p>
+      <p>전라남도 화순군 화순읍 광덕로 169-4, 3층</p>
+      <p>010-6610-3269 · musodari@gmail.com</p>
+      <p style="margin-top: 10px; color: #9ca3af;">© 2026 Choi Hak-ryong. All rights reserved.</p>
+    </footer>
+
+    <!-- 모바일 하단 고정 플로팅 바 -->
+    <div class="floating-bar">
+      <a href="tel:010-6610-3269" class="btn-call">📞 전화 바로걸기</a>
+      <a href="mailto:musodari@gmail.com" class="btn-mail">✉️ 이메일 문의</a>
+    </div>
+  </div>
+
+</body>
+</html>
