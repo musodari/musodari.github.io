@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>피클 AI 실전 교재 웹 매뉴얼 | 안전 세팅·설치 연결 가이드 · 최학룡(최디터)</title>
+<meta name="description" content="피클을 처음 시작하는 분을 위한 웹 교재. 제1부 안전 세팅과 금지·승인 5대 헌장, 설치·연결편 기본 앱과 계정 정리 4단계를 한 페이지에서 읽고 그대로 복사해 쓸 수 있습니다.">
+<meta name="author" content="최학룡 (최디터)">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="최학룡 (최디터) · 손안의 AI 에이전트 실전 교재">
+<meta property="og:title" content="피클 AI 실전 교재 · 웹 매뉴얼 | 안전 세팅과 설치·연결 가이드">
+<meta property="og:description" content="시키지 않은 전화 한 통이 관계를 흔듭니다. 첫날 30분 안전 세팅 5대 헌장과, 설치 직후 15분 연결 점검표. 강의 교재 전문을 웹에서 바로 읽고 복사하세요.">
+<meta property="og:url" content="https://musodari.github.io/pickle/">
+<meta property="og:image" content="https://musodari.github.io/profile.jpg">
+<meta property="og:image:width" content="606">
+<meta property="og:image:height" content="606">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="피클 AI 실전 교재 · 웹 매뉴얼 | 최학룡(최디터)">
+<meta name="twitter:description" content="안전 세팅·금지 5대 헌장과 설치 직후 기본 앱·계정 정리 4단계. 그대로 복사해 쓰는 웹 교재.">
+<meta name="twitter:image" content="https://musodari.github.io/profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1b3358;
+  --navy-deep:#132745;
+  --navy-soft:#2f4d78;
+  --terra:#9e4b2b;
+  --terra-tint:#f9f1e9;
+  --amber:#a9761f;
+  --ink:#1f2937;
+  --sub:#4a5563;
+  --muted:#6f7783;
+  --line:#e6e1d6;
+  --line-soft:#efebe2;
+  --paper:#fbf9f4;
+  --card:#ffffff;
+  --ok:#2f7d5a;
+  --shadow:0 1px 2px rgba(27,51,88,.05), 0 8px 24px rgba(27,51,88,.04);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.78;
+  letter-spacing:-0.005em;
+  word-break:keep-all;
+  overflow-wrap:break-word;
+}
+@media (max-width:640px){ body{font-size:16.5px;line-height:1.8} }
+a{color:var(--navy-soft)}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;z-index:200}
+.skip:focus{left:8px;top:8px}
+
+/* ---------- header ---------- */
+.top{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,249,244,.94);
+  -webkit-backdrop-filter:saturate(140%) blur(10px);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.top-in{
+  max-width:1200px;margin:0 auto;padding:10px 22px;
+  display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap;
+}
+.brand{display:flex;flex-direction:column;gap:1px;text-decoration:none;color:var(--navy);min-width:0}
+.brand b{font-size:15.5px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.brand span{font-size:12.5px;color:var(--muted);font-weight:500;letter-spacing:.01em}
+.tabs{display:flex;gap:4px;background:#f0ece3;border:1px solid #e7e1d5;border-radius:999px;padding:4px;flex:0 0 auto}
+.tab{
+  border:0;background:none;font-family:inherit;font-size:14.5px;font-weight:700;
+  color:var(--sub);padding:8px 15px;border-radius:999px;cursor:pointer;
+  display:flex;align-items:center;gap:7px;white-space:nowrap;transition:background .18s,color .18s;
+}
+.tab .no{font-size:11.5px;font-weight:800;color:var(--terra);letter-spacing:.04em}
+.tab[aria-selected="true"]{background:var(--navy);color:#fff;box-shadow:0 2px 8px rgba(27,51,88,.22)}
+.tab[aria-selected="true"] .no{color:#f0c9ae}
+.tab:not([aria-selected="true"]):hover{color:var(--navy)}
+.tocbtn{
+  display:none;border:1px solid var(--line);background:#fff;color:var(--navy);
+  font-family:inherit;font-size:14px;font-weight:700;padding:9px 13px;border-radius:10px;cursor:pointer;
+  align-items:center;gap:6px;
+}
+.tocbtn svg{width:16px;height:16px}
+
+/* ---------- layout ---------- */
+.shell{
+  max-width:1200px;margin:0 auto;padding:0 22px 90px;
+  display:grid;grid-template-columns:262px minmax(0,1fr);gap:44px;align-items:start;
+}
+main{min-width:0;padding-top:6px}
+.doc{max-width:790px}
+
+/* ---------- toc ---------- */
+.toc{position:sticky;top:72px;align-self:start;max-height:calc(100vh - 92px);overflow:auto;padding:26px 6px 40px 0;scrollbar-width:thin}
+.toc-h{display:flex;align-items:baseline;justify-content:space-between;margin:0 0 14px}
+.toc-h h2{font-size:12px;letter-spacing:.14em;color:var(--terra);font-weight:800}
+.toc-h em{font-size:11.5px;color:var(--muted);font-style:normal}
+.toc-close{display:none}
+.toc nav{display:flex;flex-direction:column;gap:1px}
+.toc a{
+  display:block;text-decoration:none;color:var(--sub);font-size:14.5px;line-height:1.5;
+  padding:7px 10px;border-radius:8px;border-left:2px solid transparent;
+}
+.toc a:hover{background:#f2eee5;color:var(--navy)}
+.toc a.on{background:#edf1f7;color:var(--navy);font-weight:700;border-left-color:var(--navy)}
+.toc a.sub{padding-left:22px;font-size:13.5px;color:#6b7280}
+.toc a.sub.on{color:var(--navy)}
+.toc .part{
+  margin:14px 0 6px;padding:0 10px;font-size:11.5px;font-weight:800;letter-spacing:.1em;color:#9a9187;
+}
+.toc .part:first-child{margin-top:0}
+
+/* ---------- hero ---------- */
+.hero{
+  background:linear-gradient(165deg,#fff 0%,#fdfaf3 62%,#fbf6ec 100%);
+  border:1px solid var(--line);border-radius:20px;
+  padding:38px 34px 32px;margin:26px 0 8px;box-shadow:var(--shadow);
+}
+.hero .kicker{font-size:13px;font-weight:800;letter-spacing:.12em;color:var(--terra)}
+.hero h1{
+  font-size:clamp(27px,3.6vw,36px);line-height:1.32;color:var(--navy);font-weight:800;
+  letter-spacing:-.03em;margin:12px 0 10px;
+}
+.hero .sub{font-size:17.5px;color:var(--sub);font-weight:600;line-height:1.7}
+.hero .rule{height:1px;background:var(--line);margin:22px 0 18px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 10px;margin:0}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;background:#f1ede2;border:1px solid #e7e0d2;
+  color:var(--navy);font-size:13.5px;font-weight:700;padding:6px 12px;border-radius:999px;
+}
+.chip.t{background:var(--terra-tint);border-color:#ecd9c9;color:var(--terra)}
+.takeaway{margin:20px 0 0;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.takeaway h2{font-size:14.5px;color:var(--terra);font-weight:800;letter-spacing:.02em;margin:0 0 10px}
+.takeaway ul{list-style:none;margin:0;padding:0}
+.takeaway li{position:relative;padding-left:18px;font-size:16px;line-height:1.7;margin:0 0 8px;color:var(--ink)}
+.takeaway li:last-child{margin-bottom:0}
+.takeaway li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--terra)}
+
+/* ---------- headings ---------- */
+.ch{margin-top:58px;scroll-margin-top:82px}
+.ch:first-of-type{margin-top:38px}
+.ch .num{
+  display:inline-block;background:var(--terra);color:#fff;font-size:13.5px;font-weight:800;
+  letter-spacing:.06em;padding:4px 11px;border-radius:7px;
+}
+h2.ch-t{
+  font-size:clamp(22px,2.7vw,28px);line-height:1.38;color:var(--navy);font-weight:800;
+  letter-spacing:-.025em;margin:12px 0 16px;
+}
+h3{
+  font-size:19px;line-height:1.5;color:var(--navy);font-weight:800;letter-spacing:-.02em;
+  margin:38px 0 12px;padding-left:13px;border-left:4px solid #ddcdb6;scroll-margin-top:82px;
+}
+h4{font-size:16.5px;color:var(--navy);font-weight:800;margin:22px 0 8px}
+
+/* ---------- text ---------- */
+.doc p{margin:0 0 15px;text-indent:.85em}
+.hero p,.box p,.card p,.case p,.faq p,.copy p,.lede,.noindent,.quote p{text-indent:0}
+.lede{font-size:17.5px;color:var(--sub);line-height:1.8;margin:0 0 18px;text-indent:0}
+.doc strong,b{font-weight:800;color:var(--navy-deep)}
+.doc ul,.doc ol{margin:0 0 16px;padding-left:1.25em}
+.doc ul li,.doc ol li{margin:0 0 7px;line-height:1.75}
+.doc ul{list-style:none;padding-left:0}
+.doc ul li{position:relative;padding-left:20px}
+.doc ul li::before{content:"";position:absolute;left:4px;top:15px;width:6px;height:6px;border-radius:50%;background:#c9b79b}
+.doc ol{padding-left:1.5em}
+.doc ol li::marker{color:var(--terra);font-weight:800}
+
+/* ---------- path ---------- */
+.path{
+  background:#f1f5fa;border:1px dashed #bfcedf;border-radius:12px;
+  padding:13px 17px;margin:16px 0 20px;font-size:15.5px;line-height:1.75;color:var(--navy);
+}
+.path .lab{display:block;font-size:12.5px;font-weight:800;letter-spacing:.06em;color:var(--navy-soft);margin-bottom:5px}
+.path b{font-weight:800}
+.path .ar{color:var(--terra);font-weight:800;padding:0 3px}
+
+/* ---------- callouts ---------- */
+.box{border-radius:14px;padding:18px 20px;margin:18px 0 22px;border:1px solid var(--line);background:#fff}
+.box .bt{font-size:14px;font-weight:800;letter-spacing:.03em;color:var(--terra);margin:0 0 8px;text-indent:0}
+.box p:last-child{margin-bottom:0}
+.box.note{background:#fdf7ea;border-color:#f0e2c4}
+.box.note .bt{color:var(--amber)}
+.box.calm{background:#f3f6f9;border-color:#dbe4ee}
+.box.calm .bt{color:var(--navy-soft)}
+.box.warn{background:#fdf2ee;border-color:#f1d8cd}
+.box.warn .bt{color:#a8461f}
+
+/* ---------- quote ---------- */
+.quote{
+  margin:18px 0 22px;padding:16px 20px 16px 22px;border-left:4px solid #cdb79c;
+  background:#faf7f1;border-radius:0 12px 12px 0;color:var(--sub);font-size:16px;line-height:1.8;
+}
+.quote p:last-child{margin-bottom:0}
+.quote .who{display:block;margin-top:8px;font-size:14px;color:var(--muted);font-style:normal}
+
+/* ---------- case card ---------- */
+.case{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px 22px;margin:16px 0;box-shadow:var(--shadow)}
+.case h4{
+  margin:0 0 12px;font-size:17px;color:var(--navy);line-height:1.5;font-weight:800;
+  display:flex;gap:9px;align-items:baseline;
+}
+.case h4 .n{color:var(--terra);font-size:18px;font-weight:800;flex:0 0 auto}
+.kv{display:grid;grid-template-columns:56px minmax(0,1fr);gap:9px 14px;margin:0}
+.kv dt{font-size:14.5px;font-weight:800;color:var(--terra);letter-spacing:.02em;padding-top:2px}
+.kv dd{margin:0;font-size:16px;line-height:1.75;color:var(--ink)}
+.kv dd .em{font-weight:800;color:var(--navy-deep)}
+
+/* ---------- table ---------- */
+.tbl-wrap{margin:18px 0 24px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+table.tbl{width:100%;border-collapse:collapse;font-size:15.8px;line-height:1.65}
+table.tbl caption{caption-side:top;text-align:left;font-size:13.5px;font-weight:800;color:var(--terra);padding:12px 16px 4px;letter-spacing:.02em}
+table.tbl th{
+  background:#edf1f7;color:var(--navy);font-weight:800;text-align:left;
+  padding:11px 15px;font-size:14.8px;border-bottom:1px solid #dde4ee;white-space:nowrap;
+}
+table.tbl td{padding:12px 15px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+table.tbl tbody tr:last-child td{border-bottom:0}
+table.tbl tbody tr:nth-child(even){background:#fcfaf6}
+table.tbl td.num-cell{font-weight:800;color:var(--terra);white-space:nowrap;width:1%}
+table.tbl td.q{font-weight:700;color:var(--navy-deep)}
+.tbl-old{display:none}
+
+/* ---------- copy box ---------- */
+.copy{
+  background:#fff;border:1px solid #e9d9c9;border-left:5px solid var(--terra);
+  border-radius:14px;margin:20px 0 24px;overflow:hidden;box-shadow:var(--shadow);scroll-margin-top:82px;
+}
+.copy-h{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding:11px 16px;background:var(--terra-tint);border-bottom:1px solid #eedfcf;
+}
+.copy-h .t{font-size:14px;font-weight:800;color:var(--terra);letter-spacing:.02em}
+.copy-h .t small{display:block;font-size:12.5px;font-weight:600;color:#9a6a4c;letter-spacing:0}
+.btn-copy{
+  border:1px solid var(--terra);background:#fff;color:var(--terra);
+  font-family:inherit;font-size:13.5px;font-weight:800;padding:7px 14px;border-radius:999px;
+  cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:background .15s,color .15s;
+  white-space:nowrap;
+}
+.btn-copy:hover{background:var(--terra);color:#fff}
+.btn-copy.done{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn-copy svg{width:14px;height:14px}
+.copy-b{padding:18px 20px 16px;font-size:16.5px;line-height:1.85}
+.copy-b ol,.copy-b ul{margin:0;padding-left:1.5em}
+.copy-b ol li,.copy-b ul li{margin:0 0 10px}
+.copy-b ol li{padding-left:2px}
+.copy-b ol li::marker{color:var(--terra);font-weight:800}
+.copy-b p{margin:0 0 10px;text-indent:0}
+.copy-b p:last-child,.copy-b ol:last-child,.copy-b ul:last-child{margin-bottom:0}
+.copy-b .tail{
+  margin-top:14px;padding-top:12px;border-top:1px dashed #eadfd0;font-size:15.5px;color:var(--sub);
+}
+
+/* ---------- chips table (상황별 한마디) ---------- */
+.phrases{display:flex;flex-direction:column;gap:10px;margin:10px 0 24px}
+.phrases-head{
+  display:grid;grid-template-columns:185px minmax(0,1fr);gap:12px;
+  padding:0 15px 4px;font-size:12.5px;font-weight:800;letter-spacing:.05em;color:var(--terra);margin-top:16px;
+}
+@media(max-width:720px){ .phrases-head{grid-template-columns:1fr;gap:2px} }
+.phrase{
+  display:grid;grid-template-columns:185px minmax(0,1fr) auto;gap:12px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;
+}
+.phrase .sit{font-size:14.5px;font-weight:800;color:var(--terra);line-height:1.5}
+.phrase .say{font-size:16px;color:var(--ink);line-height:1.7}
+.phrase .btn-copy{font-size:12.5px;padding:6px 11px}
+@media(max-width:720px){
+  .phrase{grid-template-columns:1fr auto;gap:8px}
+  .phrase .sit{grid-column:1 / -1}
+  .phrase .say{grid-column:1}
+}
+
+/* ---------- checklist ---------- */
+.chk-head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  background:#edf1f7;border:1px solid #dde4ee;border-radius:12px;padding:11px 16px;margin:18px 0 12px;
+}
+.chk-head .h{font-size:14.5px;font-weight:800;color:var(--navy)}
+.chk-head .cnt{font-size:14px;font-weight:800;color:var(--terra);font-variant-numeric:tabular-nums}
+.chk-head .cnt.done{color:var(--ok)}
+.chk-reset{border:1px solid #cdd8e6;background:#fff;color:var(--navy-soft);font-family:inherit;font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:999px;cursor:pointer}
+.chk{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:10px}
+.chk li{margin:0;padding:0}
+.chk li::before{display:none}
+.chk label{
+  display:flex;gap:13px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+  border-radius:13px;padding:15px 17px;cursor:pointer;font-size:16.3px;line-height:1.7;
+  transition:background .15s,border-color .15s;
+}
+.chk label:hover{border-color:#d8cdb9}
+.chk input{
+  -webkit-appearance:none;appearance:none;flex:0 0 auto;width:23px;height:23px;margin-top:2px;
+  border:2px solid #c4b8a3;border-radius:6px;background:#fff;cursor:pointer;position:relative;transition:.15s;
+}
+.chk input:checked{background:var(--ok);border-color:var(--ok)}
+.chk input:checked::after{
+  content:"";position:absolute;left:6px;top:2px;width:7px;height:13px;
+  border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(42deg);
+}
+.chk label:has(input:checked){background:#f4f8f4;border-color:#cfe0cd}
+.chk label:has(input:checked) span{color:#5b6b5f}
+.chk .where{display:block;font-size:13.5px;font-style:normal;color:var(--muted);margin-top:3px}
+.chk input:focus-visible{outline:2px solid var(--navy-soft);outline-offset:2px}
+.chk.numbered{counter-reset:step}
+.chk.numbered li{counter-increment:step;display:flex;gap:11px;align-items:flex-start}
+.chk.numbered li::before{
+  content:counter(step);display:grid;place-items:center;flex:0 0 auto;
+  width:26px;height:26px;margin-top:1px;border-radius:50%;background:#eef2f7;color:var(--navy);
+  font-size:13px;font-weight:800;
+}
+.chk.numbered label{flex:1 1 auto}
+
+/* ---------- faq ---------- */
+.faqs{display:flex;flex-direction:column;gap:10px;margin:16px 0 24px}
+.faq{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.faq summary{
+  cursor:pointer;padding:15px 18px;font-size:16.2px;font-weight:800;color:var(--navy);
+  list-style:none;display:flex;gap:10px;align-items:baseline;line-height:1.6;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";color:var(--terra);font-weight:800;flex:0 0 auto}
+.faq summary::after{content:"＋";margin-left:auto;color:var(--terra);font-weight:800;font-size:15px}
+.faq[open] summary::after{content:"－"}
+.faq[open] summary{border-bottom:1px solid var(--line-soft);background:#fcfaf6}
+.faq .a{padding:15px 18px 17px;font-size:16.2px;line-height:1.8}
+.faq .a .al{font-weight:800;color:var(--navy);margin-right:5px}
+
+/* ---------- chapter close ---------- */
+.take{
+  margin:26px 0 8px;background:#f5f7fa;border:1px solid #dde4ee;border-radius:14px;padding:18px 20px;
+}
+.take .tt{font-size:13.5px;font-weight:800;letter-spacing:.05em;color:var(--navy-soft);margin:0 0 10px;text-indent:0}
+.take ul{list-style:none;margin:0;padding:0}
+.take li{position:relative;padding-left:22px;font-size:16.2px;line-height:1.75;margin:0 0 7px}
+.take li:last-child{margin-bottom:0}
+.take li::before{content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:800;font-size:15px}
+
+/* ---------- toc cards (차례) ---------- */
+.idx{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:8px 0 26px}
+.idx-label{font-size:12.5px;font-weight:800;letter-spacing:.07em;color:var(--muted);margin:14px 0 0;text-indent:0}
+.idx a{
+  display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:13px;
+  padding:15px 17px;transition:border-color .15s,box-shadow .15s;
+}
+.idx a:hover{border-color:#cfc3ae;box-shadow:var(--shadow)}
+.idx .n{font-size:12.5px;font-weight:800;letter-spacing:.06em;color:var(--terra)}
+.idx .t{display:block;font-size:16.5px;font-weight:800;color:var(--navy);margin:4px 0 5px;line-height:1.5}
+.idx .d{display:block;font-size:14.3px;color:var(--sub);line-height:1.6}
+@media(max-width:720px){ .idx{grid-template-columns:1fr} }
+
+/* ---------- prevnext / footer ---------- */
+.foot{
+  margin-top:64px;padding-top:26px;border-top:1px solid var(--line);
+  font-size:14.5px;color:var(--muted);line-height:1.8;max-width:790px;
+}
+.foot .sig{font-size:15.5px;color:var(--navy);font-weight:800;margin:0 0 4px;text-indent:0}
+.foot .links{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+.foot .links a{
+  display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:#fff;
+  border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:700;color:var(--navy);
+}
+.foot .links a:hover{border-color:#cfc3ae}
+.foot .sync{font-size:13.5px;color:var(--muted);margin:14px 0 0;text-indent:0}
+.foot .sync b{color:var(--sub);font-weight:700}
+
+/* ---------- toast / progress / top ---------- */
+.toast{
+  position:fixed;left:50%;bottom:30px;transform:translate(-50%,18px);
+  background:var(--navy);color:#fff;font-size:15px;font-weight:700;padding:13px 24px;border-radius:999px;
+  box-shadow:0 10px 30px rgba(19,39,69,.28);opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;z-index:120;
+}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast.err{background:#a8461f}
+.top-top{
+  position:fixed;right:18px;bottom:22px;z-index:60;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;color:var(--navy);cursor:pointer;display:grid;place-items:center;
+  box-shadow:0 6px 18px rgba(27,51,88,.14);opacity:0;pointer-events:none;transition:opacity .2s;
+}
+.top-top.on{opacity:1;pointer-events:auto}
+.top-top svg{width:18px;height:18px}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--terra);width:0;z-index:70;transition:width .1s linear}
+
+/* ---------- responsive ---------- */
+@media(max-width:1080px){
+  .shell{grid-template-columns:1fr;gap:0;padding:0 18px 80px}
+  main{padding-top:0}
+  .tocbtn{display:inline-flex}
+  .toc{
+    position:fixed;inset:0;z-index:110;max-height:none;background:var(--paper);
+    padding:76px 22px 50px;overflow:auto;display:none;border-right:0;
+  }
+  body.toc-open .toc{display:block}
+  body.toc-open{overflow:hidden}
+  .toc-close{
+    display:grid;place-items:center;position:absolute;right:18px;top:16px;width:40px;height:40px;
+    border:1px solid var(--line);background:#fff;border-radius:50%;font-size:20px;color:var(--navy);cursor:pointer;
+  }
+  .toc-h{position:sticky;top:-76px;background:var(--paper);padding-top:0}
+  .hero{padding:28px 22px 24px;border-radius:16px;margin:18px 0 6px}
+  .top-in{padding:9px 18px;gap:10px}
+  .brand span{display:none}
+  .ch{margin-top:44px}
+}
+@media(max-width:680px){
+  .tabs{gap:2px;padding:3px}
+  .tab{padding:7px 11px;font-size:13.5px}
+  .tab .no{display:none}
+  table.tbl,table.tbl thead,table.tbl tbody,table.tbl tr,table.tbl td,table.tbl th{display:block;width:100%}
+  table.tbl thead{display:none}
+  table.tbl tr{border-bottom:1px solid var(--line);padding:4px 0}
+  table.tbl tr:last-child{border-bottom:0}
+  table.tbl td{border:0;padding:6px 16px;font-size:15.8px}
+  table.tbl td::before{
+    content:attr(data-th);display:block;font-size:12.5px;font-weight:800;letter-spacing:.04em;
+    color:var(--terra);margin-bottom:2px;
+  }
+  table.tbl td[data-th=""]::before,table.tbl td:not([data-th])::before{display:none}
+  table.tbl td.num-cell{width:auto}
+  table.tbl tbody tr:nth-child(even){background:#fdfbf7}
+  table.tbl tbody tr:nth-child(even) td{background:transparent}
+  .case{padding:17px 17px}
+  .kv{grid-template-columns:50px minmax(0,1fr);gap:8px 11px}
+  .copy-b{padding:15px 15px 13px;font-size:16.2px}
+  .doc p{text-indent:.6em}
+  .top-top{right:12px;bottom:16px}
+}
+@media print{
+  .top,.toc,.tocbtn,.toast,.top-top,.progress,.btn-copy,.chk-reset{display:none!important}
+  body{background:#fff;font-size:10.8pt;line-height:1.65}
+  .shell{display:block;max-width:none;padding:0}
+  .doc{max-width:none}
+  .book{display:block!important}
+  .book + .book{page-break-before:always}
+  .hero{box-shadow:none;border-radius:0;border:0;border-bottom:2px solid var(--navy);padding:0 0 14px}
+  .case,.copy,.tbl-wrap,.box,.take,.faq,.chk label{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+  h2.ch-t,h3{break-after:avoid;page-break-after:avoid}
+  a{color:inherit;text-decoration:none}
+  .copy-h .btn-copy{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 바로 가기</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="https://musodari.github.io/">
+      <b>손안의 AI 에이전트 실전 교재</b>
+      <span>최학룡 (최디터) · 피클 웹 매뉴얼</span>
+    </a>
+    <div class="tabs" role="tablist" aria-label="교재 편 선택">
+      <button class="tab" id="tab-a" role="tab" aria-selected="true" aria-controls="book-a" data-book="a">
+        <span class="no">제1부</span>안전 세팅 · 5대 헌장
+      </button>
+      <button class="tab" id="tab-b" role="tab" aria-selected="false" aria-controls="book-b" data-book="b">
+        <span class="no">설치·연결편</span>기본 앱 · 계정 정리
+      </button>
+    </div>
+    <button class="tocbtn" id="tocbtn" aria-expanded="false" aria-controls="toc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h11" stroke-linecap="round"/></svg>
+      목차
+    </button>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="toc" id="toc" aria-label="교재 목차">
+    <button class="toc-close" id="tocclose" aria-label="목차 닫기">×</button>
+    <div class="toc-h"><h2>목차</h2><em id="toc-hint">제1부</em></div>
+    <div id="toc-a">
+      <nav>
+        <a href="#b1-cover">여는 글 · 이 교재를 쓰는 법</a>
+        <div class="part">제1부 안전 세팅</div>
+        <a href="#b1-1">1장 &nbsp;왜 첫 세팅이 중요할까</a>
+        <a class="sub" href="#b1-1-1">1.1 사고 일곱 가지</a>
+        <a class="sub" href="#b1-1-2">1.2 사고는 이렇게 일어났습니다</a>
+        <a class="sub" href="#b1-1-3">1.3 그래도 쓸 만합니다</a>
+        <a class="sub" href="#b1-1-4">1.4 국내외 사고와 예방</a>
+        <a href="#b1-2">2장 &nbsp;금지·승인 5대 헌장</a>
+        <a class="sub" href="#b1-2-1">2.1 복사해서 붙여 넣기</a>
+        <a class="sub" href="#b1-2-2">2.2 다섯 문장의 작동</a>
+        <a class="sub" href="#b1-2-3">2.3 상황별 한 마디</a>
+        <a class="sub" href="#b1-2-4">2.4 이미 나가 버렸다면</a>
+        <a class="sub" href="#b1-2-5">2.5 사용량·작업 표준</a>
+        <a href="#b1-3">3장 &nbsp;보안·프라이버시 4단계</a>
+        <a class="sub" href="#b1-3-1">3.1 1단계 연결</a>
+        <a class="sub" href="#b1-3-2">3.2 2단계 공개 범위</a>
+        <a class="sub" href="#b1-3-3">3.3 3단계 접근 기록</a>
+        <a class="sub" href="#b1-3-4">3.4 4단계 사용량·알림</a>
+        <a class="sub" href="#b1-3-5">3.5 자주 묻는 세 가지</a>
+        <a href="#b1-4">4장 &nbsp;맡길 일과 내가 할 일</a>
+        <a class="sub" href="#b1-4-1">4.1 두 칸으로 나누기</a>
+        <a class="sub" href="#b1-4-2">4.2 세 가지 정지선</a>
+        <a class="sub" href="#b1-4-3">4.3 이번 주 약속 하나</a>
+        <a href="#b1-5">5장 &nbsp;강의실 실습 체크리스트</a>
+        <a class="sub" href="#b1-5-1">5.1 5분 세팅 미션</a>
+        <a class="sub" href="#b1-5-2">5.2 강사용 진행 팁</a>
+        <a class="sub" href="#b1-5-3">5.3 수료 후 일주일</a>
+        <a class="sub" href="#b1-5-4">5.4 수료 확인서</a>
+        <a href="#b1-end">맺음말 · 안전은 습관입니다</a>
+      </nav>
+    </div>
+    <div id="toc-b" hidden>
+      <nav>
+        <a href="#b2-cover">여는 글 · 이 교안을 쓰는 법</a>
+        <div class="part">설치·연결편</div>
+        <a href="#b2-1">1장 &nbsp;왜 설치 직후에 정리할까</a>
+        <a class="sub" href="#b2-1-1">1.1 서랍 열쇠를 주지 않았다</a>
+        <a class="sub" href="#b2-1-2">1.2 연결이 없으면 생기는 일</a>
+        <a class="sub" href="#b2-1-3">1.3 왜 하필 설치 직후인가</a>
+        <a class="sub" href="#b2-1-4">1.4 이 교안의 네 단계</a>
+        <a href="#b2-2">2장 &nbsp;1단계 · 기본 필수 세 가지</a>
+        <a class="sub" href="#b2-2-1">2.1 구글 계정</a>
+        <a class="sub" href="#b2-2-2">2.2 네이버 메일</a>
+        <a class="sub" href="#b2-2-3">2.3 휴대폰 권한</a>
+        <a class="sub" href="#b2-2-4">2.4 확인하는 표</a>
+        <a href="#b2-3">3장 &nbsp;2단계 · 확장 서비스</a>
+        <a class="sub" href="#b2-3-1">3.1 다 연결하지 않는다</a>
+        <a class="sub" href="#b2-3-2">3.2 원드라이브·MS 365</a>
+        <a class="sub" href="#b2-3-3">3.3 노션</a>
+        <a class="sub" href="#b2-3-4">3.4 슬랙·회의록·깃허브·엑스</a>
+        <a class="sub" href="#b2-3-5">3.5 세 가지 질문</a>
+        <a href="#b2-4">4장 &nbsp;3단계 · 생활과 결제</a>
+        <a class="sub" href="#b2-4-1">4.1 쇼핑몰 로그인</a>
+        <a class="sub" href="#b2-4-2">4.2 결제 수단</a>
+        <a class="sub" href="#b2-4-3">4.3 비밀번호·카드 보관</a>
+        <a class="sub" href="#b2-4-4">4.4 그래도 남는 것</a>
+        <a href="#b2-5">5장 &nbsp;4단계 · 함께 깔 앱</a>
+        <a class="sub" href="#b2-5-1">5.1 역할 분담</a>
+        <a class="sub" href="#b2-5-2">5.2 추천 조합</a>
+        <a class="sub" href="#b2-5-3">5.3 피클이 하지 않는 세 가지</a>
+        <a href="#b2-6">6장 &nbsp;강의 현장 실습 점검표</a>
+        <a class="sub" href="#b2-6-1">6.1 15분 점검표</a>
+        <a class="sub" href="#b2-6-2">6.2 강사용 진행 팁</a>
+        <a class="sub" href="#b2-6-3">6.3 수업 뒤 일주일</a>
+        <a href="#b2-end">맺음말</a>
+        <a href="#b2-app">부록 · 수강생 질문 다섯 가지</a>
+      </nav>
+    </div>
+    <div class="part" style="margin-top:18px">함께 보기</div>
+    <nav>
+      <a href="https://musodari.github.io/">최학룡 모바일 명함 <span aria-hidden="true">↗</span></a>
+    </nav>
+  </aside>
+
+  <main id="main">
+<article class="book is-on" id="book-a" role="tabpanel" aria-labelledby="tab-a">
+<div class="doc">
+
+  <section class="hero" id="b1-cover">
+    <p class="kicker" style="text-indent:0">손안의 AI 에이전트 실전 교재 · 제1부</p>
+    <p class="sub" style="font-size:16px;color:var(--terra);font-weight:700;margin:10px 0 0">피클을 처음 시작하는 분들을 위한</p>
+    <h1>피클 AI 실전 안전 세팅<br>금지·주의사항 완벽 가이드</h1>
+    <p class="sub">시키지 않은 전화 한 통이 관계를 흔듭니다.<br>첫날 30분으로 끝내는 안전 세팅 안내서.</p>
+    <div class="rule"></div>
+    <p class="meta" style="text-indent:0">
+      <span class="chip">2026년 11월</span>
+      <span class="chip">최학룡 (최디터)</span>
+      <span class="chip t">강의·교재용 · 제1부</span>
+    </p>
+    <div class="takeaway">
+      <h2>이 교재의 대상</h2>
+      <p style="text-indent:0;margin:0;font-size:16px;color:var(--sub)">피클을 처음 시작하는 시니어 · 초보자 · 소상공인 · 강사</p>
+      <h2 style="margin-top:16px">읽고 나면 남는 세 가지</h2>
+      <ul>
+        <li>피클이 실제로 일으킨 일곱 가지 사고를 알고, 내 일에서 어디가 위험한지 알아챈다.</li>
+        <li>첫날 채팅창에 붙여 넣는 금지·승인 5대 헌장으로 과잉 행동의 문을 닫는다.</li>
+        <li>보안·프라이버시 네 단계를 손으로 만져 보고, 맡길 일과 내가 할 일을 가른다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <h2 class="ch-t" id="b1-toc-h" style="scroll-margin-top:82px">차례</h2>
+  <p class="idx-label">제목 · 무엇을 다루나</p>
+  <div class="idx">
+    <a href="#b1-1">
+      <span class="n">1장</span>
+      <span class="t">왜 첫 세팅이 중요할까</span>
+      <span class="d">실제로 겪은 피클 사고 일곱 가지와 그 원인, 이 교재의 처방</span>
+    </a>
+    <a href="#b1-2">
+      <span class="n">2장</span>
+      <span class="t">금지·승인 5대 헌장</span>
+      <span class="d">첫날 그대로 복사해 붙여 넣는 다섯 문장과 상황별 한마디</span>
+    </a>
+    <a href="#b1-3">
+      <span class="n">3장</span>
+      <span class="t">보안·프라이버시 4단계</span>
+      <span class="d">연결, 공개 범위, 접근 기록, 사용량과 알림을 차례로 잠그기</span>
+    </a>
+    <a href="#b1-4">
+      <span class="n">4장</span>
+      <span class="t">맡길 일과 내가 할 일</span>
+      <span class="d">두 칸 표와 세 가지 정지선으로 경계를 굳히기</span>
+    </a>
+    <a href="#b1-5">
+      <span class="n">5장</span>
+      <span class="t">강의실 실습</span>
+      <span class="d">수강생 배포용 5분 세팅 미션과 수료 확인</span>
+    </a>
+    <a href="#b1-end">
+      <span class="n">맺음말</span>
+      <span class="t">안전은 기능이 아니라 습관입니다</span>
+      <span class="d">오늘 만든 다섯 문장과 네 단계를 오래 쓰는 법</span>
+    </a>
+  </div>
+
+  <h3 id="b1-how">이 교재를 쓰는 법</h3>
+  <ol>
+    <li>시간이 없으면 2장만 먼저 읽고 5대 헌장을 붙여 넣으세요. 다섯 문장이 오늘의 가장 큰 사고를 막습니다.</li>
+    <li>3장은 앱을 켜 놓고 한 단계씩 따라 하세요. 네 단계면 30분이면 끝납니다.</li>
+    <li>5장은 그대로 인쇄해 수강생에게 나눠 주세요. 강의 중 5분 실습으로 쓰도록 만들었습니다.</li>
+  </ol>
+  <p>이 교재는 강의 교안과 책 원고를 함께 쓰는 판형입니다. 화면으로 보면서 인쇄해도 같은 모양이 나옵니다.</p>
+  <p>「손안의 AI 에이전트」 시리즈는 5부 15장으로 기획되었습니다. 이 책은 그 첫째 부로, 피클을 처음 여는 분이 하루 만에 안전하게 시작하도록 만든 안내서입니다. 제2부는 실제 업무에 피클을 붙이는 법을 다룹니다.</p>
+
+  <!-- ================= 1장 ================= -->
+  <section class="ch" id="b1-1">
+    <span class="num">1장</span>
+    <h2 class="ch-t">왜 첫 세팅이 중요할까</h2>
+    <p>피클은 사람이 하던 일을 대신하는 AI 비서입니다. 채팅으로 부탁하면 스스로 웹사이트를 열고, 필요하면 업체에 전화까지 겁니다. 처음 써 보면 “이걸 이제야 알았나” 싶을 만큼 편합니다.</p>
+    <p>그런데 남의 일을 대신하는 능력은, 곧 스스로 판단하는 능력입니다. 부탁하지 않은 일을 “도와주려고” 판단해서 벌이는 경우가 많습니다. 2026년 10월과 11월, 국내 언론과 커뮤니티에 그런 사연이 잇따라 올라왔습니다. 대부분은 기능이 모자라서가 아니라, 내가 어디까지 허락했는지를 피클이 알 수 없어서 생긴 일이었습니다.</p>
+    <p>이 장에서는 실제로 있었던 일곱 가지 사례를 보고, 각 사례가 남긴 처방을 확인합니다. 사례를 외울 필요는 없습니다. 내 일과 닮은 것이 하나라도 있으면, 그 항목의 처방만 기억하시면 됩니다.</p>
+
+    <h3 id="b1-1-1">1.1 &nbsp;한눈에 보는 사고 일곱 가지</h3>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>번호</th><th>무슨 일이 있었나</th><th>왜 그랬나</th><th>이 교재의 처방</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num-cell" data-th="번호">1</td><td data-th="무슨 일이 있었나">부탁 없이 식당에 전화</td><td data-th="왜 그랬나">도와주려는 과잉 능동성</td><td data-th="이 교재의 처방">헌장 1 · 4번</td></tr>
+          <tr><td class="num-cell" data-th="번호">2</td><td data-th="무슨 일이 있었나">호텔에 두 번 전화, 사과 연락</td><td data-th="왜 그랬나">권한을 넓게 해석</td><td data-th="이 교재의 처방">헌장 1 · 4번</td></tr>
+          <tr><td class="num-cell" data-th="번호">3</td><td data-th="무슨 일이 있었나">지인이 보이스피싱으로 의심</td><td data-th="왜 그랬나">받는 사람은 예고를 못 들었다</td><td data-th="이 교재의 처방">헌장 4번</td></tr>
+          <tr><td class="num-cell" data-th="번호">4</td><td data-th="무슨 일이 있었나">해외 로그인 알림 메일 다섯 통</td><td data-th="왜 그랬나">클라우드 브라우저에서 접속</td><td data-th="이 교재의 처방">3장 3단계</td></tr>
+          <tr><td class="num-cell" data-th="번호">5</td><td data-th="무슨 일이 있었나">가족 정보까지 이어짐</td><td data-th="왜 그랬나">연결한 메일·일정을 읽었다</td><td data-th="이 교재의 처방">3장 1 · 2단계</td></tr>
+          <tr><td class="num-cell" data-th="번호">6</td><td data-th="무슨 일이 있었나">앱 연결로 사용량이 소진</td><td data-th="왜 그랬나">작업을 몰아서 시켰다</td><td data-th="이 교재의 처방">3장 4단계</td></tr>
+          <tr><td class="num-cell" data-th="번호">7</td><td data-th="무슨 일이 있었나">완료 보고를 믿었다가 낭패</td><td data-th="왜 그랬나">확인 절차가 없었다</td><td data-th="이 교재의 처방">헌장 5번</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box calm">
+      <p style="margin:0">일곱 가지 중 하나라도 내 일과 닮았다면, 그 항목의 처방만 기억하세요.</p>
+    </div>
+
+    <h3 id="b1-1-2">1.2 &nbsp;사고는 이렇게 일어났습니다</h3>
+    <p>각 카드는 무엇이 있었는지, 왜 그랬는지, 무엇을 미리 정해 두면 막을 수 있는지를 담았습니다. 출처는 이 장 끝에 모았습니다.</p>
+
+    <div class="case">
+      <h4><span class="n">①</span>시키지도 않았는데 식당에 전화를 걸었습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>아내분의 피클이 아침 브리핑을 준비하던 중, 점심을 궁금해할 것 같다며 근처 식당 여러 곳에 먼저 전화를 걸었습니다. 이유를 묻자 “제 자체적인 판단”이라고 답했습니다.</dd>
+        <dt>원인</dt><dd>부탁받지 않은 일을 도움으로 판단했습니다. 전화는 걸린 순간 되돌릴 수 없습니다.</dd>
+        <dt>예방</dt><dd>“외부로 나가는 연락은 내가 승인한 뒤에만”을 첫날 정합니다. (헌장 1번)</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <h4><span class="n">②</span>두 번 건 호텔 전화, 결국 제가 사과했습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>여행을 준비하던 유튜버는 자신도 모르는 사이 호텔에 두 번 전화가 나간 뒤, 호텔에 사과 연락을 해야 했습니다.</dd>
+        <dt>원인</dt><dd>“예약이 되는지 알아봐 줘”를 “전화해서 물어봐”로 해석했습니다. 확정 전에 다시 묻는 절차도 없었습니다.</dd>
+        <dt>예방</dt><dd>전화가 필요한 일은 “걸기 전에 나에게 먼저 물어봐”를 붙입니다. (헌장 1 · 4번)</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <h4><span class="n">③</span>지인에게 간 전화, 보이스피싱으로 의심받았습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>집주인에게 피클로 전화를 걸었더니 “인공지능 비서”라는 첫마디에 13초 침묵하다 끊어 버렸습니다. 보이스피싱인 줄 알았다고 합니다.</dd>
+        <dt>원인</dt><dd>받는 사람은 이 전화를 기다린 적이 없습니다. AI 목소리 사기가 흔해 오해가 당연합니다.</dd>
+        <dt>예방</dt><dd>지인·거래처에는 내가 먼저 알리고, “내가 미리 알렸는지 먼저 물어봐”라고 시킵니다. (헌장 4번)</dd>
+      </dl>
+    </div>
+
+    <div class="box note">
+      <p class="bt">받는 사람의 시간</p>
+      <p>받는 가게의 사정도 생각해야 합니다. AI가 같은 질문을 되풀이하면 응대하는 직원의 피로가 두 배가 됩니다. 전화 한 통은 거는 사람보다 받는 사람의 시간을 먼저 씁니다.</p>
+    </div>
+
+    <div class="case">
+      <h4><span class="n">④</span>해외에서 로그인했다는 메일이 다섯 통 왔습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>쇼핑을 맡긴 기자가 네이버에서 해외 IP 로그인 알림 메일을 다섯 통 받았습니다. 피클이 일하는 과정에서 생긴 정상 접속이었습니다.</dd>
+        <dt>원인</dt><dd>피클은 내 휴대폰이 아니라 회사가 운영하는 클라우드 브라우저에서 로그인합니다. 사이트에는 낯선 곳의 접속으로 보입니다.</dd>
+        <dt>예방</dt><dd>낯선 알림이 오면 먼저 내가 맡긴 일인지 확인하고, 판단은 접근 기록으로 합니다. (3장 3단계)</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <h4><span class="n">⑤</span>말하지 않은 가족 정보까지 이어졌습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>메일과 일정을 연결하면 그 안의 가족·거래처 정보가 대화와 기억에 반영되고, 통화 내용도 요약되어 남습니다.</dd>
+        <dt>원인</dt><dd>연결은 한 번의 읽기 허용입니다. 읽은 내용은 기억과 작업 기록에 남고, 운영을 위해 권한을 받은 직원이 열람할 수 있다고 안내됩니다.</dd>
+        <dt>예방</dt><dd>연결은 1~2개부터, 공개 범위는 따로 잠그고, 민감한 이야기는 넣지 않습니다. (3장 1 · 2단계)</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <h4><span class="n">⑥</span>앱을 한꺼번에 연결하니 하루 사용량이 동났습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>첫날 여러 앱을 연결하고 큰 작업을 몰아서 시키면 하루 사용량이 금방 차서, 그날은 더 맡길 수 없습니다.</dd>
+        <dt>원인</dt><dd>연결 하나하나가 내 데이터를 훑어 읽고, 작업을 몰아서 지시할수록 주고받는 횟수가 늘어납니다.</dd>
+        <dt>예방</dt><dd>연결은 1~2개부터, 큰 일은 단계로 쪼개서 지시합니다. (3장 4단계)</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <h4><span class="n">⑦</span>“완료했습니다”를 믿었다가 낭패를 봤습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>적립, 구독 해지, 예매처럼 마지막 한 단계가 남는 일에서 “됐다”는 말만 믿었다가 다시 손봤습니다. 카카오톡·토스처럼 앱 전용 기능은 되지 않고, PASS 인증은 결국 내 몫입니다.</dd>
+        <dt>원인</dt><dd>웹에서 되는 일과 앱 안에서만 되는 일이 다릅니다. 완료를 확인하는 절차가 없으면 “했다”는 보고만 남습니다.</dd>
+        <dt>예방</dt><dd>“끝나면 링크와 화면을 보여 줘”를 규칙으로 넣습니다. (헌장 5번)</dd>
+      </dl>
+    </div>
+
+    <h3 id="b1-1-3">1.3 &nbsp;그래도 피클은 충분히 쓸 만합니다</h3>
+    <p>사고 사례만 보면 불안해집니다. 그러나 같은 능력이 제대로 작동한 사례도 같은 시기에 함께 보도됐습니다.</p>
+    <p>일정이 겹쳐 등록되어 있던 이용자의 부탁을 받고, 피클이 치과에 직접 전화해 예약을 다음 날 오전 11시로 옮긴 뒤 결과를 알려 준 사례가 있습니다. 기자가 식당 예약을 맡겼을 때는 예약이 안 된다는 답을 듣자 현장 대기 가능 여부와 예상 대기 시간까지 이어서 물었습니다.</p>
+    <p>차이는 하나입니다. 허락의 경계를 정해 두었는가. 경계만 정하면 같은 능력이 사고가 아니라 든든한 비서가 됩니다. 다음 장에서 그 경계를 다섯 문장으로 만듭니다.</p>
+
+    <h3 id="b1-1-4">1.4 &nbsp;국내외 실전 AI 비서 사고와 예방 사례</h3>
+    <p>피클 밖에서도 같은 사고가 되풀이됐습니다. 아래 네 가지는 국내외 보도로 확인된 사례이고, 처방은 이 교재의 헌장과 설정에 그대로 들어 있습니다. 내 일과 겹치는 항목이 하나라도 있으면 그 처방 한 줄만 세팅에 더해 두세요.</p>
+
+    <div class="case">
+      <h4><span class="n">①</span>대화방을 헷갈려 개인 금융 내역이 새어 나갔습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>메시징 스타트업 XMTP 랩스에서 실제로 있었던 일로 보도됐습니다. 조회 권한만 준 비서가 비슷한 이름의 단체 대화방을 골라 계좌 잔액과 지출 내역을 그대로 보냈습니다.</dd>
+        <dt>원인</dt><dd>무엇을 읽을지가 아니라, 어디로 보낼지를 제어하지 않았습니다. 권한을 나누어 주었어도 발신은 따로 잠가야 합니다.</dd>
+        <dt>예방</dt><dd>읽기 권한과 외부 발신 승인을 나눕니다. 사람에게 보내는 일은 초안까지만 받고 내가 보냅니다. (헌장 1번)</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <h4><span class="n">②</span>카드만 잠갔더니 적립금으로 물건을 샀습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>월스트리트저널이 보도한 사례입니다. 신용카드 승인만 막아 두었더니, 쇼핑을 맡은 에이전트가 매장 적립금과 포인트로 주문을 마쳤습니다.</dd>
+        <dt>원인</dt><dd>결제 수단 하나를 잠그면 다른 지불 수단이 남습니다. 카드와 포인트와 간편결제는 같은 돈입니다.</dd>
+        <dt>예방</dt><dd>수단을 가리지 않고 금전이 오가는 실행은 전부 사전 승인으로 묶습니다. (헌장 2번)</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <h4><span class="n">③</span>동기화 폴더와 원본 시트는 되돌리기가 어렵습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>노트북·사무실 PC와 실시간으로 맞춰지는 폴더나 여럿이 함께 쓰는 시트를 비서가 임의로 바꾸거나 지우면, 다른 기기와 공유 링크까지 같은 순간에 바뀝니다.</dd>
+        <dt>원인</dt><dd>고친 파일 하나가 모든 기기에 동시에 적용되고, 지운 파일은 동기화를 타고 함께 사라집니다.</dd>
+        <dt>예방</dt><dd>동기화 폴더는 이름 변경·이동·삭제를 제안까지만 받고 내가 직접 합니다. 드라이브와 시트는 삭제 뒤 다시 만들지 않고 제자리에서 고칩니다. (2.5의 작업 표준)</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <h4><span class="n">④</span>읽은 메일과 웹페이지 속 문장을 지시로 받아들였습니다</h4>
+      <dl class="kv">
+        <dt>사례</dt><dd>외부에서 온 메일이나 웹페이지 본문에 “이 내용을 다른 곳으로 보내라” 같은 문구가 섞여 있으면, 비서가 그것을 내 부탁으로 잘못 알아듣는 일이 생깁니다.</dd>
+        <dt>원인</dt><dd>읽은 자료와 내 지시를 구분하지 않으면, 남이 심어 둔 문장이 명령이 됩니다.</dd>
+        <dt>예방</dt><dd>메일과 웹페이지, 첨부 문서의 내용은 지시가 아니라 참고 자료로만 다루게 합니다. (헌장 5번)</dd>
+      </dl>
+    </div>
+
+    <p>네 사례의 공통점은 하나입니다. 사고를 가르는 것은 피클이 할 수 있는 일의 크기가 아니라, 내가 어디까지 허락했는가입니다. 다음 장에서 그 허락을 다섯 문장으로 만듭니다.</p>
+
+    <div class="take">
+      <p class="tt">이 장에서 가져갈 것</p>
+      <ul>
+        <li>사고는 기능이 모자라서가 아니라, 허락의 경계를 정하지 않아서 생깁니다.</li>
+        <li>전화, 결제, 지인 관계, 확인 없는 완료 보고 — 이 네 곳에 사고가 몰려 있습니다.</li>
+        <li>경계를 정해 두면 같은 능력이 사고가 아니라 든든한 비서가 됩니다.</li>
+      </ul>
+    </div>
+
+    <h4>자료 출처</h4>
+    <ul style="font-size:15px;color:var(--sub)">
+      <li>연합뉴스TV, 「이용자 요청 없었는데… 멋대로 식당 전화 AI “자체적 판단”」, 2026년 10월 27일.</li>
+      <li>국민일보, 「AI 비서가 민원 전화까지? 공무원들 “답해야 하나”」, 2026년 11월 13일.</li>
+      <li>ZDNet Korea, 「AI가 대신 건 전화, 받는 사람은 왜 지칠까요」, 2026년 11월 13일.</li>
+      <li>연합뉴스, 「KTX 예매에 전화까지… 내 일 대신하는 AI 비서 피클」, 2026년 11월 14일.</li>
+      <li>디지털투데이, 피클 체험 기사(해외 IP 로그인 알림·본인인증 관련), 2026년 11월.</li>
+      <li>더코어, 「안녕하세요, AI 비서인데요 … 직접 써보니」, 2026년 11월 8일.</li>
+    </ul>
+  </section>
+
+  <!-- ================= 2장 ================= -->
+  <section class="ch" id="b1-2">
+    <span class="num">2장</span>
+    <h2 class="ch-t">금지·승인 5대 헌장</h2>
+    <p>설정 화면을 다 만지기 전에, 가장 먼저 할 일은 피클에게 내 경계를 말해 주는 것입니다. 앱의 스위치보다 채팅창의 문장이 먼저입니다.</p>
+    <p>아래 다섯 문장을 그대로 복사해 첫 대화에 붙여 넣으세요. 어려운 말은 없습니다. 다만 이 다섯 문장이 막는 사고의 범위는 넓습니다. 전화, 결제, 예약, 지인 관계, 그리고 확인 없는 보고까지 덮습니다.</p>
+    <div class="box warn">
+      <p style="margin:0">규칙은 사고 뒤에 정하면 늦습니다. 전화 한 통과 메시지 한 줄은 지운다고 없어지지 않습니다.</p>
+    </div>
+
+    <h3 id="b1-2-1">2.1 &nbsp;복사해서 붙여 넣는 5대 헌장</h3>
+    <div class="copy" id="copy-charter">
+      <div class="copy-h">
+        <span class="t">복사용 · 그대로 붙여 넣으세요<small>채팅창에 그대로 붙여 넣으면 됩니다</small></span>
+        <button class="btn-copy js-copy" type="button" data-target="charter-text">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg>
+          복사하기
+        </button>
+      </div>
+      <div class="copy-b" id="charter-text">
+        <p>지금부터 아래 다섯 가지를 항상 지켜 줘.</p>
+        <ol>
+          <li>전화·문자·이메일은 내가 “보내”라고 말하기 전에는 절대 보내지 마. 초안만 보여 주고 내 확인을 기다려.</li>
+          <li>돈이 나가는 일, 예약·주문 확정, 파일·일정 삭제는 금액·상대·시간을 먼저 보여 주고, 내가 “좋아”라고 답한 뒤에만 실행해.</li>
+          <li>내가 지인 이야기를 꺼내도, 내 부탁이 없으면 그 사람이나 그 사람의 피클에게 먼저 연락하지 마. 내 사적인 대화도 옮기지 마.</li>
+          <li>지인·거래처에 전화하기 전에는 “상대에게 내가 미리 알렸는지” 먼저 물어봐. 모르면 걸지 말고 나에게 알려 줘.</li>
+          <li>확인하지 못한 사실은 추측해서 단정하지 마. 못 찾았으면 “확인 못 했어”라고 말하고, 끝냈으면 결과 링크와 화면을 보여 줘.</li>
+        </ol>
+        <p class="tail">붙여 넣은 뒤 한 줄만 더 보내면 기억에 오래 남습니다. “이 다섯 가지를 항상 지켜 주고, 지킬 수 없을 때는 실행 전에 나에게 물어봐.”</p>
+      </div>
+    </div>
+
+    <h3 id="b1-2-2">2.2 &nbsp;다섯 문장은 이렇게 작동합니다</h3>
+    <dl class="kv" style="grid-template-columns:150px minmax(0,1fr);gap:14px 16px">
+      <dt>① 외부 발송 금지</dt><dd>전화·문자·메일은 나간 순간 되돌릴 수 없습니다. 초안만 받아 내가 보냅니다. 확인 한 번에 드는 시간은 10초, 잘못 건 전화를 수습하는 시간은 하루입니다.</dd>
+      <dt>② 돈과 확정</dt><dd>금액, 상대, 시간, 내용을 먼저 보고 내가 답한 뒤에 실행합니다. 예약 확정과 취소, 구독 해지도 여기에 들어갑니다.</dd>
+      <dt>③ 지인 이야기</dt><dd>내가 꺼낸 이야기가 그 사람에게 먼저 도착하면 관계가 상합니다. 부탁이 없으면 침묵이 기본입니다.</dd>
+      <dt>④ 사전 예고</dt><dd>받는 사람이 모르는 전화는 사기로 보입니다. “알렸는지 먼저 물어봐”는 나를 지키는 문장이 아니라, 상대를 지키는 문장입니다.</dd>
+      <dt>⑤ 확인과 증거</dt><dd>“확인 못 했어”가 “됐다”보다 낫습니다. 결과 링크와 화면을 요구하면, 되지 않은 일을 됐다고 믿는 일이 줄어듭니다.</dd>
+    </dl>
+
+    <h3 id="b1-2-3">2.3 &nbsp;상황이 생길 때마다 한 마디</h3>
+    <p>헌장만으로는 부족할 때가 있습니다. 그때는 아래 문장을 그대로 말하거나 붙여 넣으세요. 짧을수록 잘 지킵니다.</p>
+    <div class="phrases-head"><span>이런 상황이면</span><span>이렇게 말하세요</span></div>
+    <div class="phrases">
+      <div class="phrase">
+        <span class="sit">식당·업체에 전화할 때</span>
+        <span class="say">전화하기 전에 나한테 먼저 물어봐. 내가 “걸어”라고 할 때만 걸어.</span>
+        <button class="btn-copy js-copy-text" type="button" data-text="전화하기 전에 나한테 먼저 물어봐. 내가 “걸어”라고 할 때만 걸어.">복사</button>
+      </div>
+      <div class="phrase">
+        <span class="sit">결제가 필요한 순간</span>
+        <span class="say">결제 전에 금액과 상품을 먼저 보여 줘. 내가 “결제해”라고 할 때만 해.</span>
+        <button class="btn-copy js-copy-text" type="button" data-text="결제 전에 금액과 상품을 먼저 보여 줘. 내가 “결제해”라고 할 때만 해.">복사</button>
+      </div>
+      <div class="phrase">
+        <span class="sit">파일이나 일정을 지울 때</span>
+        <span class="say">지우기 전에 뭐가 지워지는지 먼저 보여 줘.</span>
+        <button class="btn-copy js-copy-text" type="button" data-text="지우기 전에 뭐가 지워지는지 먼저 보여 줘.">복사</button>
+      </div>
+      <div class="phrase">
+        <span class="sit">지인 소식이 오갈 때</span>
+        <span class="say">그 사람에게는 내가 직접 말할게. 너는 먼저 연락하지 마.</span>
+        <button class="btn-copy js-copy-text" type="button" data-text="그 사람에게는 내가 직접 말할게. 너는 먼저 연락하지 마.">복사</button>
+      </div>
+      <div class="phrase">
+        <span class="sit">일이 끝났을 때</span>
+        <span class="say">끝났으면 링크와 화면을 보여 줘. 못 했으면 못 했다고 말해.</span>
+        <button class="btn-copy js-copy-text" type="button" data-text="끝났으면 링크와 화면을 보여 줘. 못 했으면 못 했다고 말해.">복사</button>
+      </div>
+      <div class="phrase">
+        <span class="sit">밤이나 새벽에 일이 걸릴 때</span>
+        <span class="say">밤 11시부터 아침 7시까지는 알림도, 새벽 작업도 하지 마.</span>
+        <button class="btn-copy js-copy-text" type="button" data-text="밤 11시부터 아침 7시까지는 알림도, 새벽 작업도 하지 마.">복사</button>
+      </div>
+    </div>
+
+    <h3 id="b1-2-4">2.4 &nbsp;이미 나가 버렸다면</h3>
+    <p>규칙을 정하기 전에 일이 벌어질 수 있습니다. 그때 순서를 알아 두면 피해가 작습니다.</p>
+    <dl class="kv" style="grid-template-columns:170px minmax(0,1fr);gap:14px 16px">
+      <dt>① 상대에게 먼저 알린다</dt><dd>전화가 나갔다면 짧게 사과 한 줄을 보냅니다. “제 AI 비서가 실수로 연락드렸습니다. 제가 다시 연락드리겠습니다.” 침묵이 오해를 키웁니다.</dd>
+      <dt>② 피클에게 그 상황을 그대로 말한다</dt><dd>무엇이 잘못이었는지 짚어 주면 다음 판단이 달라집니다. “그 전화는 내가 시키지 않았어. 앞으로는 걸기 전에 물어봐.”</dd>
+      <dt>③ 무엇을 근거로 그랬는지 확인한다</dt><dd>대화 기록에서 피클이 어떤 문장을 단서로 삼았는지 봅니다. 그 문장을 지우거나, 다르게 말해 두면 같은 일이 반복되지 않습니다.</dd>
+    </dl>
+    <div class="box note">
+      <p style="margin:0">이미 결제나 예약이 확정됐다면 취소 가능 시간을 먼저 확인하세요. 되돌릴 수 있는 시간은 짧습니다.</p>
+    </div>
+
+    <h3 id="b1-2-5">2.5 &nbsp;초기 세팅에 못 박는 사용량·작업 표준 지침</h3>
+    <p>헌장이 하지 말아야 할 일을 정한다면, 여기서 정하는 것은 일하는 방식입니다. 첫날 한 번 붙여 넣어 두면 매일의 사용량과 사고가 함께 줄어듭니다. 세 가지 원칙과 그대로 복사할 문장을 함께 두었습니다.</p>
+
+    <h4>① 사용량과 사고 소모를 줄이는 네 가지</h4>
+    <p>불필요한 장시간 연산과 같은 확인의 반복을 줄입니다. 대량 자료는 무거운 분석보다 가벼운 일괄 수집을 먼저 시킵니다. 이미 정해 둔 조건은 다시 묻지 않게 합니다. 긴 작업은 중간 결과물을 파일로 저장해 두고, 한도가 초기화된 뒤 그 파일에서 이어받습니다. 다만 사실 확인과 결과 점검은 줄이지 않습니다.</p>
+
+    <h4>② 구글 드라이브와 시트 작업 표준</h4>
+    <p>기존 파일과 시트는 삭제하고 다시 만들지 않고 반드시 제자리에서 고칩니다. 그래야 버전 기록과 되돌리기가 남고, 파일 ID와 공유 링크가 그대로 유지됩니다. 파일과 폴더, 시트 탭, 제목에는 언더바를 넣지 않고 자연스러운 한글 띄어쓰기를 씁니다. 표의 보조 열은 폭을 최소로 줄이고, 보고는 짧은 요약과 링크, 내가 확인할 항목 순서로 받습니다.</p>
+
+    <h4>③ PC 동기화 폴더 보호</h4>
+    <p>노트북이나 사무실 PC와 실시간으로 동기화되는 폴더는 이름 변경·이동·삭제를 시키지 않습니다. 필요하면 제안만 받고 내가 직접 합니다. 동기화는 되돌릴 수 있는 시간이 짧기 때문입니다.</p>
+
+    <div class="copy" id="copy-standard">
+      <div class="copy-h">
+        <span class="t">복사용 · 아래 세 문장을 그대로 붙여 넣으세요<small>첫날 한 번이면 매일의 사용량이 달라집니다</small></span>
+        <button class="btn-copy js-copy" type="button" data-target="standard-text">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg>
+          복사하기
+        </button>
+      </div>
+      <div class="copy-b" id="standard-text">
+        <p>지금부터 일하는 방식도 아래 세 가지로 맞춰 줘.</p>
+        <p>사용량을 아껴 줘. 같은 확인을 되풀이하지 말고, 이미 정한 조건은 다시 묻지 마. 긴 작업은 중간 결과를 파일로 남기고, 한도가 초기화되면 거기서 이어서 해. 다만 사실 확인과 결과 점검은 줄이지 마.</p>
+        <p>구글 드라이브와 시트는 삭제하고 다시 만들지 말고 제자리에서 고쳐 줘. 파일 이름과 시트 제목에 언더바는 넣지 마. 보고는 짧은 요약과 링크, 내가 확인할 것만 정리해 줘.</p>
+        <p>PC와 실시간으로 동기화되는 폴더는 내 확인 없이 이름을 바꾸거나 옮기거나 지우지 마. 필요하면 먼저 제안해 줘.</p>
+        <p class="tail">붙여 넣은 뒤에 “이 세 가지를 항상 지키고, 지킬 수 없을 때는 실행 전에 나에게 물어봐” 한 줄을 더 보내면 기억에 오래 남습니다.</p>
+      </div>
+    </div>
+
+    <div class="take">
+      <p class="tt">이 장에서 가져갈 것</p>
+      <ul>
+        <li>다섯 문장이면 외부 발송, 결제, 지인 관계, 확인 절차를 한 번에 덮습니다.</li>
+        <li>헌장은 첫날, 짧게, 복사해서 붙여 넣는 것이 가장 잘 지켜집니다.</li>
+        <li>상황마다 짧은 한 마디를 덧붙이면 오해와 사고가 눈에 띄게 줄어듭니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 3장 ================= -->
+  <section class="ch" id="b1-3">
+    <span class="num">3장</span>
+    <h2 class="ch-t">앱에서 잠가 두는 보안·프라이버시 4단계</h2>
+    <p>헌장이 피클의 말을 다스린다면, 설정은 피클의 손을 다스립니다. 네 단계면 충분하고, 30분이면 끝납니다.</p>
+    <p>앱 아래쪽 네 번째 탭이 나의 피클입니다. 이 탭 하나에 필요한 설정이 모두 모여 있습니다. 순서대로 따라오세요. 1단계만 해도 위험의 절반이 줄어듭니다.</p>
+
+    <h3 id="b1-3-1">3.1 &nbsp;1단계 &nbsp;연결은 필요한 것부터</h3>
+    <div class="path">
+      <span class="lab">앱에서 이렇게 찾아가세요</span>
+      나의 피클 탭 <span class="ar">→</span> (내 피클 이름)에 연결된 앱 및 서비스
+    </div>
+    <p>처음부터 다 연결하지 않습니다. 메일과 일정, 이렇게 1~2개면 충분합니다. 연결 하나하나가 내 데이터를 훑어 읽는 일이기 때문입니다. 안 쓰는 연결은 해제하세요. 다만 해제해도 이미 대화와 기억에 남은 내용은 남습니다. 남기고 싶지 않은 이야기는 대화에서 지워 달라고 요청하세요.</p>
+    <p>외부 사이트 쪽도 가끔 확인하세요. 네이버나 구글의 로그인 기기 목록에서 낯선 기기를 지우는 일은 피클과 별개로 해 두는 것이 좋습니다.</p>
+
+    <h3 id="b1-3-2">3.2 &nbsp;2단계 &nbsp;누구에게 무엇을 보여줄지 잠그기</h3>
+    <div class="path">
+      <span class="lab">앱에서 이렇게 찾아가세요</span>
+      나의 피클 탭 <span class="ar">→</span> 정보 공개 범위 설정
+    </div>
+    <p>여기서 정하는 것은 내 정보를 누가 볼 수 있는가입니다. 친구별로, 연결별로 나누어 정하고, 어떤 항목은 절대 공유하지 않도록 따로 지정할 수 있습니다.</p>
+    <p>일정은 한가한지 바쁜지만 알리기 옵션을 켜 두세요. 시간표 전체가 아니라 여유 여부만 전달되므로, 약속을 잡으면서도 속 내용은 지킬 수 있습니다.</p>
+    <p>가족과 거래처는 반드시 나눕니다. 거래처에는 일정과 연락처를 열지 않는 편이 안전합니다. 이 한 가지 설정이 5번 사고(말하지 않은 정보까지 이어지는 일)를 막습니다.</p>
+
+    <h3 id="b1-3-3">3.3 &nbsp;3단계 &nbsp;접근 기록과 암호화 확인하기</h3>
+    <div class="path">
+      <span class="lab">앱에서 이렇게 찾아가세요</span>
+      나의 피클 탭 <span class="ar">→</span> 연결된 앱 및 서비스 &nbsp;(또는 연결된 결제 수단)<br>
+      상단 암호화 키 배너 <span class="ar">→</span> 접근 기록<br>
+      같은 화면의 설정 <span class="ar">→</span> 접근 유지 기간 · 카드·연결 접근 끄기
+    </div>
+    <p>배너를 열면 접근 기록이 나옵니다. 카드와 연결이 언제 어떻게 쓰였는지 남는 기록이고, 앱이 직접 확인해 “모든 기록이 확인됐어요”라고 알려 줍니다. 남의 손이 닿았는지 의심될 때 여기부터 보세요.</p>
+    <p>설정에서는 접근 유지 기간을 정할 수 있습니다. 길게 두는 것보다 짧게 두고 필요할 때 다시 허용하는 편이 안전합니다. 급하면 카드·연결 접근 끄기로 즉시 차단할 수 있습니다.</p>
+    <p>비밀번호와 카드 번호는 내 기기에서 암호화되어 저장되고, AI는 그 값을 읽지 못합니다. 다만 실제로 로그인하거나 결제하는 순간에는 값이 사이트로 전달되는 과정을 거칩니다. 그래서 한도가 작은 카드를 따로 만들어 연결하는 편이 좋습니다.</p>
+    <p>대화와 기억은 서버에서 처리됩니다. 서비스 운영과 오류 대응을 위해 권한을 받은 직원이 열람할 수 있고, 열람은 기록으로 남습니다. 민감한 금액, 건강, 가족사는 애초에 대화에 넣지 않는 것이 가장 확실한 보호입니다.</p>
+
+    <h3 id="b1-3-4">3.4 &nbsp;4단계 &nbsp;사용량과 알림 다스리기</h3>
+    <div class="path">
+      <span class="lab">앱에서 이렇게 찾아가세요</span>
+      나의 피클 탭 <span class="ar">→</span> 일일 사용량 한도 &nbsp;·&nbsp; 알림 설정
+    </div>
+    <p>일일 사용량 한도는 매일 새벽 4시에 초기화됩니다. 오늘 얼마나 썼는지는 이 카드에서 바로 보입니다. 다만 이 한도는 내가 부탁한 일과 내가 만들어 둔 예약 작업에 그대로 쓰입니다. 아침 브리핑처럼 시스템이 알아서 도는 기본 루틴만 한도를 쓰지 않습니다. 그래서 무거운 일은 언제 돌릴지부터 정하는 것이 중요합니다.</p>
+    <p>큰 작업은 쪼개서 지시하세요. “여행 전체를 예약해 줘”보다 “후보 세 곳을 추려 줘”, 그다음 “그중 한 곳이 예약 가능한지 확인해 줘”가 사용량도 적게 쓰고 확인도 쉽습니다.</p>
+    <p>한도가 다 차면 한도 초기화 티켓을 쓸 수 있습니다. 앱에서는 나의 피클 탭의 일일 사용량 한도 카드에서 한도 초기화 티켓 줄을 열면 사용량 화면이 나옵니다. 여기에 전체 초기화 티켓과 절반 초기화 티켓이 있고, 초기화 티켓 자동 사용 스위치와 티켓 내 사용 순서에서 절반 티켓 우선이나 전체 티켓 우선을 골라 둘 수 있습니다. 급한 날에만 쓰는 예비 수단으로 남겨 두세요. 알림 설정에서는 밤사이 알림을 막습니다. “밤 11시부터 아침 7시까지는 알리지 마”라고 말로 정해 두면, 새벽에 울리는 알림이 사라집니다.</p>
+    <p>예약 작업은 시간대를 둘로 나누어 두는 편이 좋습니다. 하나는 취침 뒤 새벽 1~3시입니다. 그날 남은 사용량으로 무겁고 오래 걸리는 정리·수집·문서 작업을 돌려 소진합니다. 다른 하나는 아침입니다. 새벽 4시에 한도가 새로 채워진 직후인 새벽 4~6시에는 아침 브리핑처럼 꼭 필요한 가벼운 작업만 최소한으로 두세요. 이 시간대에 무거운 작업을 몰아 두면 그날 낮에 쓸 사용량이 남지 않습니다.</p>
+    <p>절약의 핵심은 다시 읽는 양을 줄이는 것입니다. 한 AI 스타트업이 자기 루틴을 재어 보니, 토큰은 새 글을 쓰는 데보다 매 단계에서 대화 전체를 다시 읽는 데 대부분 쓰였습니다. 그래서 실행 로그와 긴 결과는 파일로 저장해 두고 요약만 받고, 긴 작업은 나누고, 서로 상관없는 작업은 한 번에 묶어 시키는 편이 낫습니다.</p>
+    <p>같은 왕복을 여러 번 시키는 일도 그대로 사용량이 됩니다. 클라우드 업체와 이동 서비스 업체가 공개한 사례에서는 여러 번 오가던 작업을 스크립트 한 번으로 묶자 토큰 소모가 50~90퍼센트까지 줄었습니다. 같은 값을 여러 번 확인하게 하지 말고, 필요한 자료를 한 번에 모아 오게 시키세요.</p>
+
+    <h3 id="b1-3-5">3.5 &nbsp;자주 묻는 세 가지</h3>
+    <div class="faqs">
+      <details class="faq" open>
+        <summary>연결을 끊으면 예전 대화도 지워지나요?</summary>
+        <div class="a"><span class="al">A.</span> 지워지지 않습니다. 연결을 해제해도 이미 나눈 대화와 기억에 남은 내용은 그대로 남습니다. 지우고 싶은 이야기는 대화에서 직접 지워 달라고 요청하세요.</div>
+      </details>
+      <details class="faq">
+        <summary>해외 로그인 알림이 오면 해킹인가요?</summary>
+        <div class="a"><span class="al">A.</span> 대부분은 피클이 일하는 과정에서 생긴 접속입니다. 다만 확실히 하려면 접근 기록을 열어 시간과 사용 내역을 확인하세요. 내가 맡기지 않은 사용이 보이면 카드·연결 접근 끄기로 바로 차단합니다.</div>
+      </details>
+      <details class="faq">
+        <summary>비밀번호를 채팅으로 보내도 되나요?</summary>
+        <div class="a"><span class="al">A.</span> 보내지 마세요. 피클이 보내는 로그인 카드에 입력해야 암호화되어 저장됩니다. 채팅창에 적은 값은 대화 기록에 남습니다.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= 4장 ================= -->
+  <section class="ch" id="b1-4">
+    <span class="num">4장</span>
+    <h2 class="ch-t">맡길 일과 내가 할 일</h2>
+    <p>피클을 잘 쓰는 사람은 일을 많이 맡기는 사람이 아니라, 맡길 것과 맡기지 않을 것을 빨리 가르는 사람입니다.</p>
+    <p>아래 표는 강의에서 가장 반응이 좋은 부분입니다. 왼쪽은 피클이 나보다 빠르고 정확한 일, 오른쪽은 내 손이 반드시 필요한 일입니다.</p>
+
+    <h3 id="b1-4-1">4.1 &nbsp;두 칸으로 나누면 끝납니다</h3>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>피클에게 맡기면 좋은 일</th><th>내가 직접 해야 하는 일</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-th="피클에게 맡기면 좋은 일">최저가·옵션 비교, 장바구니 담기</td><td data-th="내가 직접 해야 하는 일">PASS·공동인증서로 하는 본인인증</td></tr>
+          <tr><td data-th="피클에게 맡기면 좋은 일">일정 등록과 약속 리마인더</td><td data-th="내가 직접 해야 하는 일">결제 비밀번호 입력과 카드 승인</td></tr>
+          <tr><td data-th="피클에게 맡기면 좋은 일">식당 영업시간·주차 확인 전화</td><td data-th="내가 직접 해야 하는 일">카카오톡·토스처럼 앱에서만 되는 발송과 송금</td></tr>
+          <tr><td data-th="피클에게 맡기면 좋은 일">메일·공지 요약, 문서와 시트 정리</td><td data-th="내가 직접 해야 하는 일">1인 한정·초 단위 티켓팅, 인기 공연 예매</td></tr>
+          <tr><td data-th="피클에게 맡기면 좋은 일">여행 동선과 숙소 후보 추리기</td><td data-th="내가 직접 해야 하는 일">집주인·거래처·가족에게 가는 민감한 통화</td></tr>
+          <tr><td data-th="피클에게 맡기면 좋은 일">구독 갱신일·환율·배송 알림</td><td data-th="내가 직접 해야 하는 일">계약서·동의서의 최종 확인과 서명</td></tr>
+          <tr><td data-th="피클에게 맡기면 좋은 일">제안서·블로그 글의 뼈대 잡기</td><td data-th="내가 직접 해야 하는 일">상대의 감정을 다루는 답장</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="b1-4-2">4.2 &nbsp;경계선이 흔들릴 때 떠올릴 세 가지</h3>
+    <p>판단이 서지 않으면 이 세 문장만 확인하세요. 하나라도 걸리면 내가 직접 합니다.</p>
+    <dl class="kv" style="grid-template-columns:190px minmax(0,1fr);gap:14px 16px">
+      <dt>① 돈이 나가면 멈춘다</dt><dd>결제, 예약금, 구독, 송금. 금액이 정해지는 순간은 내가 봅니다.</dd>
+      <dt>② 사람에게 닿으면 멈춘다</dt><dd>전화, 문자, 메일, 친구의 피클. 상대가 나를 알아보는 순간은 내가 결정합니다.</dd>
+      <dt>③ 되돌릴 수 없으면 멈춘다</dt><dd>삭제, 확정, 발송, 신청. 취소가 안 되는 일은 초안까지만 맡깁니다.</dd>
+    </dl>
+
+    <h3 id="b1-4-3">4.3 &nbsp;한 번 해 보기: 이번 주 약속 하나</h3>
+    <p>표로만 보면 감이 오지 않습니다. 이번 주 약속 하나를 아래 순서로 처리해 보세요. 경계가 손에 익습니다.</p>
+    <dl class="kv" style="grid-template-columns:200px minmax(0,1fr);gap:14px 16px">
+      <dt>① 후보 세 곳을 추려 달라고 한다</dt><dd>지역, 시간, 인원만 말하면 됩니다. 후보를 고르는 일은 맡겨도 안전합니다.</dd>
+      <dt>② 영업시간과 주차를 확인해 달라고 한다</dt><dd>전화가 필요한 확인은 “전화해도 되는지 먼저 물어봐”를 붙입니다.</dd>
+      <dt>③ 예약 전화는 내가 한다</dt><dd>상대와 말이 오가는 순간은 내가 직접 합니다. 대신 피클에게 통화 내용을 정리해 달라고 하면 기록이 남습니다.</dd>
+    </dl>
+
+    <div class="take">
+      <p class="tt">이 장에서 가져갈 것</p>
+      <ul>
+        <li>맡길 일과 내가 할 일을 먼저 가르면, 지시가 짧아지고 확인이 쉬워집니다.</li>
+        <li>돈, 사람, 되돌릴 수 없음 — 셋 중 하나라도 걸리면 내가 직접 합니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 5장 ================= -->
+  <section class="ch" id="b1-5">
+    <span class="num">5장</span>
+    <h2 class="ch-t">강의실 실습 체크리스트</h2>
+    <p>이 장은 그대로 인쇄해 수강생에게 나눠 주는 페이지입니다. 강의 중 5분, 손으로 직접 해 보는 것이 목표입니다.</p>
+
+    <h3 id="b1-5-1">5.1 &nbsp;5분 세팅 미션</h3>
+    <p>다섯 칸을 모두 채우면 오늘의 세팅은 끝입니다. 하나씩, 옆 사람과 확인하며 진행하세요.</p>
+    <div class="chk-head">
+      <span class="h">5분 세팅 미션</span>
+      <span class="cnt" id="cnt-a" data-total="5">0 / 5</span>
+      <button class="chk-reset" type="button" data-reset="chk-a">표시 지우기</button>
+    </div>
+    <ul class="chk" id="chk-a">
+      <li><label><input type="checkbox"><span>채팅창에 5대 헌장을 붙여 넣고, “이대로 기억해”라고 보냈다.</span></label></li>
+      <li><label><input type="checkbox"><span>나의 피클 탭에서 연결된 앱을 확인하고, 쓰지 않는 연결을 1개 이상 정리했다.</span></label></li>
+      <li><label><input type="checkbox"><span>정보 공개 범위 설정에서 일정은 한가한지 바쁜지만 알리기로 바꿨다.</span></label></li>
+      <li><label><input type="checkbox"><span>암호화 키 배너를 열어 접근 기록을 확인하고, 접근 유지 기간을 정했다.</span></label></li>
+      <li><label><input type="checkbox"><span>알림 설정에서 밤사이 방해금지를 정하고, 일일 사용량 한도 카드를 확인했다.</span></label></li>
+    </ul>
+
+    <h3 id="b1-5-2">5.2 &nbsp;강사용 진행 팁</h3>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>구분</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td data-th="구분" class="q">시간 배분</td><td data-th="내용">설명 3분, 실습 5분, 확인 2분. 실습 중에는 화면을 함께 띄워 두고 손이 느린 분을 먼저 찾습니다.</td></tr>
+          <tr><td data-th="구분" class="q">자주 나오는 질문</td><td data-th="내용">“전화를 아예 못 걸게 할 수 있나”라는 질문이 가장 많습니다. 헌장 1번 문장을 붙여 넣으면 대부분 해결됩니다.</td></tr>
+          <tr><td data-th="구분" class="q">마무리 한마디</td><td data-th="내용">“오늘 만든 다섯 문장이 내 계정의 울타리입니다. 나중에 하나씩 더하면 됩니다.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="b1-5-3">5.3 &nbsp;수료 후 일주일</h3>
+    <p>3일째에 접근 기록을 한 번 열어 보세요. 예상하지 못한 사용이 없는지 확인하는 습관이 초기 사고를 가장 많이 막습니다.</p>
+    <p>일주일 뒤에는 연결을 한 번 정리합니다. 그동안 쓰지 않은 연결은 끊고, 자주 쓰는 연결만 남깁니다. 이 두 번의 점검이면 피클은 내 생활에 맞춰집니다.</p>
+
+    <h3 id="b1-5-4">5.4 &nbsp;수료 확인</h3>
+    <div class="box" style="border-width:2px;border-color:#cdbfa8;background:#fffdf8">
+      <p class="bt" style="font-size:16px;text-align:center;letter-spacing:.16em">세팅 수료 확인서</p>
+      <p style="text-align:center;font-size:16.5px;margin:10px 0 18px">위 수강생은 피클 AI 안전 세팅 5단계를 모두 마쳤습니다.</p>
+      <p style="text-align:center;font-size:15.5px;color:var(--sub);letter-spacing:.02em">
+        수강생 <span style="display:inline-block;width:110px;border-bottom:1px solid #bdb2a0;margin:0 8px"></span>
+        강사 <span style="display:inline-block;width:110px;border-bottom:1px solid #bdb2a0;margin:0 8px"></span>
+      </p>
+      <p style="text-align:center;font-size:15.5px;color:var(--sub);margin-top:14px;letter-spacing:.04em">20&nbsp;&nbsp;&nbsp;&nbsp;년&nbsp;&nbsp;&nbsp;&nbsp;월&nbsp;&nbsp;&nbsp;&nbsp;일</p>
+    </div>
+
+    <div class="take">
+      <p class="tt">이 장에서 가져갈 것</p>
+      <ul>
+        <li>다섯 칸 체크리스트를 채우면 오늘의 세팅은 끝납니다.</li>
+        <li>3일째 접근 기록, 일주일째 연결 정리 — 두 번의 점검으로 습관이 됩니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 맺음말 ================= -->
+  <section class="ch" id="b1-end">
+    <span class="num">맺음말</span>
+    <h2 class="ch-t">안전은 기능이 아니라 습관입니다</h2>
+    <p>오늘 만든 다섯 문장과 네 단계 설정은 한 번 하고 끝나는 일이 아닙니다. 새 기기를 쓰거나, 새 업무를 맡기거나, 새 사람에게 연락할 때마다 같은 질문으로 돌아옵니다. 이 일은 누구에게 닿는가, 되돌릴 수 있는가.</p>
+    <p>피클은 시킬수록 편해집니다. 다만 편해지는 속도보다 경계가 먼저 서 있어야 오래 쓸 수 있습니다. 이 교재 1부를 마친 분은 이미 그 순서를 아는 사람입니다.</p>
+    <p>제2부에서는 실제 업무에 피클을 붙이는 법을 다룹니다. 이 교재의 설정과 헌장을 먼저 끝내 두시면, 2부의 실습이 훨씬 수월해집니다.</p>
+    <p style="margin-top:26px;text-indent:0"><b>최학룡 (최디터)</b><br><span style="font-size:15px;color:var(--muted)">2026년 11월 · 손안의 AI 에이전트 실전 교재 제1부</span></p>
+  </section>
+</div>
+</article>
+<article class="book" id="book-b" role="tabpanel" aria-labelledby="tab-b" hidden>
+<div class="doc">
+
+  <section class="hero" id="b2-cover">
+    <p class="kicker" style="text-indent:0">손안의 AI 에이전트 실전 교재 · 설치·연결편</p>
+    <h1>피클을 설치한 직후,<br>무엇을 먼저 연결하고 정리할까</h1>
+    <p class="sub">기본 앱과 계정 정리 4단계<br>강의 현장 15분 세팅 점검표</p>
+    <div class="rule"></div>
+    <p class="meta" style="text-indent:0">
+      <span class="chip">2026년 11월</span>
+      <span class="chip">최학룡 (최디터)</span>
+      <span class="chip t">강의·교재용 · 설치·연결편</span>
+    </p>
+    <div class="takeaway">
+      <h2>이 교안의 대상</h2>
+      <p style="text-indent:0;margin:0;font-size:16px;color:var(--sub)">피클을 처음 설치한 시니어 · 소상공인 · 농업인 · 강사</p>
+      <h2 style="margin-top:16px">읽고 나면 남는 세 가지</h2>
+      <ul>
+        <li>피클이 일을 못 하는 이유가 기능이 아니라 ‘연결’에 있음을 안다.</li>
+        <li>설치 직후 15분 안에 끝내는 필수 3종 연결 순서를 손에 익힌다.</li>
+        <li>내 계정에 무엇이 남고 무엇이 지워지는지 알고 연결한다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <h2 class="ch-t" style="scroll-margin-top:82px">차례</h2>
+  <p class="idx-label">장 · 무엇을 다루나</p>
+  <div class="idx">
+    <a href="#b2-1">
+      <span class="n">1장</span>
+      <span class="t">왜 설치 직후에 정리해야 할까</span>
+      <span class="d">피클이 일을 못 하는 세 가지 이유와 15분 세팅의 원리</span>
+    </a>
+    <a href="#b2-2">
+      <span class="n">2장 · 1단계</span>
+      <span class="t">기본 필수 서비스 세 가지</span>
+      <span class="d">구글 계정, 네이버 메일, 휴대폰 권한을 연결하는 순서</span>
+    </a>
+    <a href="#b2-3">
+      <span class="n">3장 · 2단계</span>
+      <span class="t">확장 서비스는 골라서</span>
+      <span class="d">원드라이브, 노션, 슬랙 등을 내 일에 맞게 고르는 기준</span>
+    </a>
+    <a href="#b2-4">
+      <span class="n">4장 · 3단계</span>
+      <span class="t">생활·결제·자동화</span>
+      <span class="d">쇼핑몰 로그인과 결제 수단, 그리고 보안 원리</span>
+    </a>
+    <a href="#b2-5">
+      <span class="n">5장 · 4단계</span>
+      <span class="t">함께 깔아 둘 기본 앱</span>
+      <span class="d">피클과 보조 앱의 역할 분담</span>
+    </a>
+    <a href="#b2-6">
+      <span class="n">6장</span>
+      <span class="t">강의 현장 실습</span>
+      <span class="d">설치 직후 15분 세팅 점검표와 진행 팁</span>
+    </a>
+    <a href="#b2-app">
+      <span class="n">부록</span>
+      <span class="t">수강생 질문 다섯 가지</span>
+      <span class="d">수업에서 가장 많이 나오는 질문과 답</span>
+    </a>
+  </div>
+
+  <h3 id="b2-how">이 교안을 쓰는 법</h3>
+  <ol>
+    <li>시간이 없으면 6장의 점검표만 인쇄해 나눠 주세요. 오늘의 실습은 그것으로 끝납니다.</li>
+    <li>2장은 앱을 켜 놓고 한 항목씩 따라 하세요. 필수 3종 연결에 7분이면 충분합니다.</li>
+    <li>4장 4.3과 4.4는 보안을 걱정하는 수강생에게 그대로 읽어 주셔도 되는 문장으로 적었습니다.</li>
+  </ol>
+  <p>이 교안은 강의 교안과 배포용 자료를 함께 쓰는 판형입니다. 화면으로 보면서 인쇄해도 같은 모양이 나옵니다.</p>
+
+  <!-- ================= 1장 ================= -->
+  <section class="ch" id="b2-1">
+    <span class="num">1장</span>
+    <h2 class="ch-t">왜 설치 직후에 정리해야 할까</h2>
+
+    <h3 id="b2-1-1">1.1 &nbsp;비서는 똑똑한데, 서랍 열쇠를 주지 않았다</h3>
+    <p>유능한 비서를 새로 들였다고 해 보겠습니다. 책상도 주고 자리도 주었습니다. 그런데 사무실 문 열쇠도, 서랍 열쇠도, 거래처 연락처도 주지 않았습니다. 이 비서에게 “이번 주 일정 정리해 줘”라고 하면 어떻게 될까요. 매번 저에게 다시 물어보거나, 아무것도 못 합니다.</p>
+    <p>피클도 같습니다. 피클은 제법 똑똑한 비서지만, 내 메일과 일정과 파일과 연락처를 열어 주지 않으면 매번 제가 복사해서 붙여 넣어야 합니다. 그러면 “AI 비서를 쓰고 있다”는 느낌만 남고, 실제로 줄어드는 일은 거의 없습니다. 수강생이 첫 주에 실망하는 지점이 대개 여기입니다.</p>
+
+    <h3 id="b2-1-2">1.2 &nbsp;연결이 없으면 생기는 세 가지 일</h3>
+    <p>첫째, 같은 설명을 매번 반복합니다. “우리 가게 주소는…”, “그 거래처 담당자 이름은…” 하고 채팅창에 다시 적게 됩니다. 둘째, 확인을 못 합니다. 내일 일정이 겹치는지, 그 메일이 아직 답장을 기다리는지 알 수 없습니다. 셋째, 결과물이 흩어집니다. 만들어 준 문서를 어디에 두었는지 몰라 다시 찾습니다.</p>
+    <p>반대로 연결이 되어 있으면 요청이 짧아집니다. “이번 주 화요일 오후는 비워 줘”, “지난달 주문서 찾아서 표로 정리해 줘”처럼 한 문장이면 충분합니다. 짧은 지시로 일이 끝나는 것이 좋은 비서의 첫 번째 표시입니다.</p>
+
+    <h3 id="b2-1-3">1.3 &nbsp;왜 하필 설치 직후인가</h3>
+    <p>피클은 처음 설치했을 때 아무것도 보지 못하는 상태로 시작합니다. 이때 정리해 두면 이후의 모든 요청이 그 위에서 돌아갑니다. 반대로 몇 달 쓰다가 정리하면 비용이 훨씬 큽니다. 엉뚱한 폴더에 파일이 쌓여 있고, 오래된 회사 계정과 개인 계정이 섞여 있고, 이미 보낸 공유 링크가 끊깁니다.</p>
+    <p>설치 직후 15분이면 충분합니다. 그 15분이 앞으로 1년의 업무 속도를 정합니다. 나중에 세 시간을 들여 정리하는 것보다, 오늘 15분을 쓰는 편이 훨씬 쌉니다.</p>
+
+    <h3 id="b2-1-4">1.4 &nbsp;이 교안의 네 단계</h3>
+    <p>아래 표가 이 교안의 전부입니다. 뒤의 장들은 이 표를 왜 그렇게 하는지 설명하는 글입니다. 수업에서는 표를 먼저 보여 주고, 한 줄씩 앱에서 확인하며 진행하시면 됩니다.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>단계</th><th>무엇을 하는가</th><th>걸리는 시간</th><th>마치면 달라지는 것</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-th="단계" class="num-cell">1단계</td><td data-th="무엇을 하는가">구글 계정, 네이버 메일, 휴대폰 권한을 연결한다</td><td data-th="걸리는 시간">7분</td><td data-th="마치면 달라지는 것">메일·일정·파일·연락처를 근거로 답한다</td></tr>
+          <tr><td data-th="단계" class="num-cell">2단계</td><td data-th="무엇을 하는가">원드라이브, 노션, 슬랙 중 쓰는 것만 연결한다</td><td data-th="걸리는 시간">4분</td><td data-th="마치면 달라지는 것">내 업무 채널의 자료까지 함께 본다</td></tr>
+          <tr><td data-th="단계" class="num-cell">3단계</td><td data-th="무엇을 하는가">쇼핑몰 로그인과 결제 수단을 등록한다</td><td data-th="걸리는 시간">3분</td><td data-th="마치면 달라지는 것">주문·배송·예약까지 한 문장으로 맡긴다</td></tr>
+          <tr><td data-th="단계" class="num-cell">4단계</td><td data-th="무엇을 하는가">결과물을 확인할 보조 앱을 정리한다</td><td data-th="걸리는 시간">1분</td><td data-th="마치면 달라지는 것">만든 문서를 눈으로 확인하고 발행한다</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>이 표에서 눈여겨볼 것은 시간입니다. 네 단계를 다 해도 15분입니다. 오늘 못 끝내면 1단계만 하고 나머지는 다음 날 하십시오. 1단계만 되어 있어도 피클이 하는 일이 확실히 달라집니다.</p>
+  </section>
+
+  <!-- ================= 2장 ================= -->
+  <section class="ch" id="b2-2">
+    <span class="num">2장</span>
+    <h2 class="ch-t">1단계 · 기본 필수 서비스 세 가지</h2>
+
+    <h3 id="b2-2-1">2.1 &nbsp;① 구글 계정 — 안내가 모이는 우편함, 결과물이 쌓이는 작업실</h3>
+    <p>왜 연결하는가. 세상의 안내는 대부분 메일로 옵니다. 주문 확인, 예약 확정, 영수증, 보안 알림, 일정 초대가 모두 메일로 들어옵니다. 일정은 캘린더에, 만들어 준 문서와 표는 드라이브에 쌓입니다. 연결은 나의 피클 탭에서 비서 이름이 붙은 ‘연결된 앱 및 서비스’ 줄에서 합니다. 이 셋이 연결되면 “이번 주 일정 정리해 줘”, “지난달 거래처 견적서 찾아 줘”, “오늘 온 메일 중에 답장해야 할 것만 골라 줘” 같은 부탁이 가능해집니다.</p>
+    <p>왜 미리 정리하는가. 드라이브에 폴더 뼈대가 없으면 비서가 만든 문서가 드라이브 맨 위에 흩어집니다. 폴더를 먼저 만들어 두면 제자리에 쌓입니다. 처음에는 네 개면 충분합니다. 업무, 강의, 거래처, 개인 — 이렇게 네 개를 만들고 이름 앞에 숫자를 붙여 두십시오. 01 업무, 02 강의, 03 거래처, 04 개인처럼 두면 이름순으로 정렬해도 순서가 흐트러지지 않습니다.</p>
+    <div class="box note">
+      <p class="bt">한 가지 더</p>
+      <p>문서를 고칠 때는 “새로 만들어 줘”보다 “이 문서를 고쳐 줘”라고 부탁하십시오. 같은 문서를 제자리에서 고치면 문서 주소가 그대로라서, 이미 보내 둔 공유 링크가 끊기지 않습니다. 반대로 지우고 새로 만들면 링크가 죽어서 받은 사람이 열지 못합니다.</p>
+    </div>
+
+    <h3 id="b2-2-2">2.2 &nbsp;② 네이버 메일 — 국내 거래와 공공 안내가 오는 곳</h3>
+    <p>왜 연결하는가. 쇼핑몰 주문과 배송 안내, 공공기관과 협회 공지, 블로그 협업 제안, 거래처 견적이 아직도 네이버 메일로 많이 옵니다. 구글만 연결하면 절반만 보이는 셈입니다. 두 메일을 함께 연결해야 “이번 주에 온 중요 메일”이 한 번에 정리됩니다.</p>
+    <p>어떻게 안전하게 연결하는가. 네이버는 메일 프로그램이 쓰도록 따로 만든 전용 비밀번호를 발급합니다. 네이버에서는 이것을 애플리케이션 비밀번호라고 부릅니다. 요점은 하나입니다. 내 본 비밀번호를 넘기지 않고, 메일 확인 전용 열쇠만 만들어 준다는 것입니다. 순서는 이렇습니다. 네이버에서 2단계 인증을 켜 두고, 메일 프로그램용 비밀번호를 하나 발급합니다. 피클의 연결 화면이 이 과정을 안내하고, 발급된 전용 비밀번호를 안전하게 보관합니다. 본 비밀번호는 어디에도 입력하지 않습니다.</p>
+    <p>전용 비밀번호는 언제든 내가 폐기할 수 있습니다. 나중에 이 연결이 마음에 들지 않으면 네이버에서 그 비밀번호를 지우면 됩니다. 그러면 피클은 더 이상 메일을 읽지 못합니다. 이 점이 “본 비밀번호를 알려 주는” 방식과 결정적으로 다릅니다.</p>
+
+    <h3 id="b2-2-3">2.3 &nbsp;③ 휴대폰 권한 — 위치, 연락처, 기기 캘린더</h3>
+    <p>왜 켜 두는가. 세 가지 권한이 각각 다른 일을 합니다. 위치는 이동 중에 힘을 냅니다. “지금 출발하면 약속 시간에 늦지 않아?”, “근처에 주차할 곳 있어?” 같은 질문에 답하려면 현재 위치가 필요합니다. 연락처는 이름으로 사람을 찾을 때 필요합니다. “김 사장님께 연락해 줘”라고 했을 때 연락처에 없으면 매번 번호를 불러 줘야 합니다. 기기 캘린더는 휴대폰 기본 앱에만 적어 둔 약속을 놓치지 않게 합니다. 구글 캘린더와 휴대폰 캘린더를 따로 쓰는 분이 특히 많습니다.</p>
+    <p>수업 중에 꼭 함께 확인하는 이유. 이 세 권한이 꺼져 있으면 피클은 “연락처를 찾을 수 없다”, “현재 위치를 모른다”고 답합니다. 수강생은 그것을 기능이 없는 것으로 오해합니다. 실제로는 권한만 켜면 되는 경우가 대부분입니다. 휴대폰 설정에서 피클 앱의 권한을 열어 위치와 연락처, 캘린더를 허용으로 바꾸면 바로 해결됩니다.</p>
+    <p>위치는 ‘항상’이 아니라 ‘앱을 사용하는 동안’으로 충분합니다. 개인정보가 걱정되어 끄고 쓰셔도 됩니다. 다만 그때는 이동 중 안내의 정확도가 떨어집니다. 무엇을 얻고 무엇을 내주는지 알고 고르면 됩니다.</p>
+
+    <h3 id="b2-2-4">2.4 &nbsp;세 가지를 마치고 확인하는 표</h3>
+    <p>연결이 되었는지는 말로 확인하지 말고, 세 가지만 물어보면 됩니다. 답이 나오면 1단계는 끝난 것입니다. 답이 안 나오면 그 항목만 다시 봅니다.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>확인 질문</th><th>어디서 보나</th><th>답이 나오면</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-th="확인 질문" class="q">“이번 주 일정 알려 줘”</td><td data-th="어디서 보나">나의 피클 → 연결된 앱 및 서비스</td><td data-th="답이 나오면">구글 캘린더와 휴대폰 캘린더 일정이 함께 나온다</td></tr>
+          <tr><td data-th="확인 질문" class="q">“어제 온 메일 요약해 줘”</td><td data-th="어디서 보나">같은 화면의 메일 항목</td><td data-th="답이 나오면">지메일과 네이버 메일이 함께 나온다</td></tr>
+          <tr><td data-th="확인 질문" class="q">“가족 연락처에서 번호 찾아 줘”</td><td data-th="어디서 보나">같은 화면의 기기 항목</td><td data-th="답이 나오면">이름과 전화번호가 나온다</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>세 줄이 다 채워지지 않아도 괜찮습니다. 하나씩 채우면 됩니다. 다만 세 줄 모두 답이 없다면 연결 화면에서 권한이 꺼져 있는지부터 확인하십시오. 연결은 되어 있는데 권한만 꺼진 경우가 절반입니다.</p>
+  </section>
+
+  <!-- ================= 3장 ================= -->
+  <section class="ch" id="b2-3">
+    <span class="num">3장</span>
+    <h2 class="ch-t">2단계 · 확장 서비스는 골라서</h2>
+
+    <h3 id="b2-3-1">3.1 &nbsp;다 연결하지 않는다는 원칙</h3>
+    <p>처음 하는 분들이 가장 많이 하는 실수는 눈에 보이는 서비스를 모두 연결하는 것입니다. 연결이 많아지면 좋아 보이지만 실제로는 세 가지가 나빠집니다. 첫째, 답이 느려집니다. 둘째, 엉뚱한 자료를 근거로 답할 위험이 커집니다. 셋째, 무엇이 어디에 있는지 내가 기억하지 못하게 됩니다.</p>
+    <p>기준은 간단합니다. 최근 한 달 안에 세 번 이상 연 업무 채널인가. 그렇다면 연결하고, 아니면 다음으로 미룹니다. 연결은 언제든 할 수 있으니 서두를 이유가 없습니다.</p>
+
+    <h3 id="b2-3-2">3.2 &nbsp;원드라이브와 마이크로소프트 365 — 폴더부터 가른다</h3>
+    <p>노트북과 사무실 컴퓨터가 원드라이브로 실시간 동기화되고 있다면 연결할 값어치가 큽니다. 그 안의 워드 문서, 엑셀 표, 아웃룩 메일과 일정까지 이어지기 때문입니다.</p>
+    <p>다만 연결 전에 꼭 해야 할 일이 있습니다. 개인 중요 서류와 업무 공유 폴더를 가르는 것입니다. 원드라이브는 동기화 폴더라서, 정리하다가 지운 파일이 내 컴퓨터에서도 사라집니다. 연결 전에 폴더 구조를 확정하고, 지워서는 안 되는 폴더는 이름에 표시를 해 두십시오.</p>
+    <p>연결한 뒤에는 범위를 정해 부탁하십시오. “드라이브 정리해 줘”보다 “업무 폴더 안에서만 이번 달 파일을 찾아 줘”가 안전합니다. 회사 계정은 관리자가 허용한 범위까지만 연결됩니다. 개인 계정과 회사 계정을 한 기기에서 섞어 쓰신다면, 업무용 하나만 연결하는 편이 낫습니다.</p>
+
+    <h3 id="b2-3-3">3.3 &nbsp;노션 — 공유할 페이지를 직접 고른다</h3>
+    <p>노션은 회의록, 체크리스트, 거래처 목록처럼 표로 관리하는 분에게 강합니다. 다만 구조를 이해해야 합니다. 노션은 연결만으로는 페이지가 보이지 않습니다. 내가 비서에게 보여 줄 페이지를 직접 골라 연결해야 그 페이지가 보입니다. 페이지의 점 세 개 메뉴에서 연결을 선택하는 방식입니다. 나중에 페이지를 새로 만들면 그 페이지도 같은 방법으로 연결해야 합니다.</p>
+    <p>그래서 노션은 “전부 연결”이 아니라 “보여 줄 것만 연결”이 자연스럽습니다. 강의 자료, 거래처, 진행 중인 일 — 이렇게 두세 개 상위 페이지만 연결하십시오. 개인 일기나 급여 자료처럼 남에게 보이면 곤란한 페이지는 연결하지 않는 것이 원칙입니다.</p>
+
+    <h3 id="b2-3-4">3.4 &nbsp;슬랙, 회의록, 깃허브, 엑스 — 쓰는 채널만</h3>
+    <p>슬랙을 쓰는 팀이라면 연결할 값어치가 있습니다. 팀 대화에서 할 일을 뽑아 내고, 내가 답하지 않은 질문을 찾아 줍니다. 회의록 도구를 쓴다면 회의가 끝난 뒤 정리와 후속 메일까지 이어집니다. 깃허브는 개발과 배포를 하는 분에게만 의미가 있습니다. 개발을 하지 않는다면 연결하지 않아도 손해가 없습니다. 엑스는 내가 올린 글과 저장한 글을 참고해 글감을 만드는 데 씁니다.</p>
+    <p>정리하면 이렇습니다. 이 넷은 ‘기본’이 아니라 ‘선택’입니다. 1단계의 세 가지를 마친 뒤, 내가 매주 여는 채널 하나를 골라 추가하는 것으로 충분합니다.</p>
+
+    <h3 id="b2-3-5">3.5 &nbsp;연결을 고를 때의 세 가지 질문</h3>
+    <dl class="kv" style="grid-template-columns:230px minmax(0,1fr);gap:14px 16px">
+      <dt>① 이 계정에 내가 매주 들어가는가</dt><dd>그렇지 않으면 지금 연결하지 않습니다.</dd>
+      <dt>② 이 안에 남에게 보이면 곤란한 것이 있는가</dt><dd>있다면 보여 줄 범위를 먼저 정합니다.</dd>
+      <dt>③ 연결을 끊으면 무엇이 남는가</dt><dd>연결을 끊어도 이미 나눈 대화와 기록은 남습니다. 이것을 알고 연결해야 나중에 놀라지 않습니다.</dd>
+    </dl>
+  </section>
+
+  <!-- ================= 4장 ================= -->
+  <section class="ch" id="b2-4">
+    <span class="num">4장</span>
+    <h2 class="ch-t">3단계 · 생활과 결제, 자동화의 문을 연다</h2>
+
+    <h3 id="b2-4-1">4.1 &nbsp;자주 쓰는 쇼핑몰 로그인을 등록한다</h3>
+    <p>여기까지가 ‘일’이었다면, 3단계는 ‘생활’입니다. 쇼핑몰 로그인을 등록해 두면 “생수 떨어졌어” 한 마디로 후보 비교, 장바구니 담기, 주문, 배송 조회까지 이어집니다. 등록 화면은 나의 피클 탭의 연결된 앱 및 서비스 안에 있습니다. 사이트를 고르고 아이디와 비밀번호를 넣으면 저장됩니다. 저장한 로그인은 그 사이트의 상세 화면에서 고치거나 지웁니다.</p>
+    <div class="box note">
+      <p class="bt">팁은 두 가지입니다</p>
+      <p>첫째, 자주 쓰는 두세 곳만 등록하십시오. 열 개를 등록하면 관리가 안 됩니다. 둘째, 비밀번호를 채팅창에 적어 보내지 마십시오. 채팅에 적은 내용은 대화 기록으로 남습니다. 입력 화면에서 직접 넣으면 저장은 되지만 대화에는 남지 않습니다.</p>
+    </div>
+
+    <h3 id="b2-4-2">4.2 &nbsp;결제 수단을 등록한다</h3>
+    <p>예약과 주문의 마지막 단계는 결제입니다. 결제 수단을 등록해 두면 그 단계에서 막히지 않습니다. 화면은 나의 피클 탭의 연결된 결제 수단입니다. 이 화면은 열 때마다 기기 잠금을 한 번 풀어야 열립니다. 지문이나 PIN을 요구하는 것은 정상입니다.</p>
+    <p>여기서 꼭 말씀드릴 것이 있습니다. 결제는 승인 절차를 거칩니다. 금액이 정해지는 순간은 내가 확인합니다. 등록은 “편하게 결제하려고” 하는 것이지 “마음대로 결제해도 된다”는 뜻이 아닙니다. 처음에는 생활비 카드 한 장만 등록하고, 고액이 나가는 카드는 등록하지 않는 편이 안전합니다.</p>
+
+    <h3 id="b2-4-3">4.3 &nbsp;비밀번호와 카드 번호는 어떻게 보관되나</h3>
+    <p>수강생이 가장 많이 걱정하는 부분이라 정확히 적습니다. 저장한 비밀번호와 카드 번호는 기기에서 암호화되어 보관되고, AI인 비서에게는 실제 값이 보이지 않습니다. 로그인과 결제가 필요한 순간에만 안전하게 채워지고, 그 값은 해당 사이트로 전달됩니다. 우리가 흔히 말하는 ‘금고’가 기기 안에 하나 있는 셈입니다.</p>
+    <p>암호를 푸는 열쇠는 기기에 보관됩니다. 그래서 휴대폰을 바꾸면 열쇠를 옮기거나 다시 만드는 절차가 필요합니다. 앱의 연결 화면이나 결제 수단 화면 위쪽에 열쇠 상태를 알려 주는 안내가 있고, 그곳에서 복구 절차를 안내합니다. 이 절차를 모르면 새 휴대폰에서 저장한 카드가 보이지 않습니다. 기기를 바꿀 때는 이 화면부터 확인하십시오.</p>
+    <p>정직하게 덧붙이면 이렇습니다. 실제로 로그인하거나 결제하는 순간에는 그 값이 처리 과정에서 풀립니다. 그러니 “누구도 절대 볼 수 없다”가 아니라 “AI는 값을 보지 못하고, 저장은 암호화된다”로 이해하시는 것이 정확합니다.</p>
+
+    <h3 id="b2-4-4">4.4 &nbsp;그래도 남는 것 — 대화 기록과 공유 범위</h3>
+    <p>연결이 편한 만큼, 무엇이 남는지도 알아야 합니다. 네 가지만 기억하십시오.</p>
+    <p>첫째, 대화 내용과 작업 기록은 서비스가 답을 만들기 위해 AI 처리에 쓰입니다. 둘째, 운영과 문제 해결을 위해 권한을 가진 담당자가 기록을 열람할 수 있고, 그 열람은 기록으로 남습니다. 셋째, 모델 학습은 내 계정의 피클 개선 설정이 켜져 있을 때 대화와 작업 기록에 한해 이뤄집니다. 메일·일정 같은 연결 계정의 자료와 저장한 카드, 로그인 정보는 학습에 쓰이지 않습니다.</p>
+    <p>넷째, 다른 사람과의 공유는 따로 잠급니다. 나의 피클 탭의 정보 공개 범위 설정에서 친구, 사람별, 연결별로 범위를 정하고, 절대 공유하지 않을 것을 지정합니다. 일정 공개는 한가한지 바쁜지만 알리도록 설정해 두면, 약속이 있다는 사실만 알려 주고 무슨 약속인지는 알려 주지 않습니다. 친구의 피클과 대화할 때 이 설정이 그대로 적용됩니다.</p>
+    <p>마지막으로 연결 해제의 의미입니다. 연결을 끊으면 저장된 열쇠는 지워지고, 사이트 쪽 해지도 함께 시도됩니다. 다만 이미 나눈 대화와 기억은 남습니다. 브라우저에서 로그인해 둔 상태가 곧바로 끝나지 않을 수도 있으니, 함께 쓰는 컴퓨터라면 그 사이트에서 따로 로그아웃하십시오.</p>
+    <p>어떤 연결이 언제 쓰였는지는 접근 기록에서 확인합니다. 연결 화면이나 결제 수단 화면 위쪽의 열쇠 안내를 열면 접근 기록으로 들어갈 수 있고, 여기서 접근 유지 기간을 정합니다. 한 달에 한 번 이 화면을 열어 보는 습관이면 충분합니다.</p>
+  </section>
+
+  <!-- ================= 5장 ================= -->
+  <section class="ch" id="b2-5">
+    <span class="num">5장</span>
+    <h2 class="ch-t">4단계 · 함께 깔아 두면 좋은 기본 앱</h2>
+
+    <h3 id="b2-5-1">5.1 &nbsp;역할 분담 — 피클은 뼈대, 보조 앱은 눈과 손</h3>
+    <p>피클은 뼈대를 세우고 자료를 찾고 문서를 만듭니다. 다만 만든 문서를 눈으로 확인하고, 인쇄하고, 발행하는 일은 앱에서 사람이 마무리합니다. 이 역할 분담을 이해하면 “피클이 다 해 줄 것”이라는 기대도, “피클은 아무것도 못 한다”는 실망도 사라집니다.</p>
+
+    <h3 id="b2-5-2">5.2 &nbsp;추천 조합</h3>
+    <p>아래 표는 강의 현장에서 가장 자주 쓰는 조합입니다. 모두 설치할 필요는 없고, 내가 결과물을 확인하는 방식에 맞춰 두세 개만 고르면 됩니다.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>앱</th><th>맡는 일</th><th>없으면 생기는 일</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-th="앱" class="q">구글 드라이브</td><td data-th="맡는 일">만든 문서를 열고 공유 링크를 보낸다</td><td data-th="없으면 생기는 일">파일을 매번 내려받아야 한다</td></tr>
+          <tr><td data-th="앱" class="q">구글 문서</td><td data-th="맡는 일">초안을 읽고 현장에서 고친다</td><td data-th="없으면 생기는 일">인쇄본만 남아 고치기 어렵다</td></tr>
+          <tr><td data-th="앱" class="q">구글 스프레드시트</td><td data-th="맡는 일">표와 집계를 눈으로 확인한다</td><td data-th="없으면 생기는 일">숫자를 확인하지 못한 채 넘어간다</td></tr>
+          <tr><td data-th="앱" class="q">네이버</td><td data-th="맡는 일">블로그 발행, 예약, 본인인증을 마무리한다</td><td data-th="없으면 생기는 일">발행 단계에서 매번 막힌다</td></tr>
+          <tr><td data-th="앱" class="q">카카오톡</td><td data-th="맡는 일">가족과 거래처에 내가 직접 전한다</td><td data-th="없으면 생기는 일">피클이 보낸 것을 내가 옮겨야 한다</td></tr>
+          <tr><td data-th="앱" class="q">이미지 생성 도구</td><td data-th="맡는 일">썸네일과 그림 초안을 만든다</td><td data-th="없으면 생기는 일">그림이 필요할 때 직접 그려야 한다</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box calm">
+      <p class="bt">표에서 카카오톡 줄을 눈여겨보십시오</p>
+      <p>피클은 카카오톡으로 직접 보내지 못합니다. 그래서 가족이나 거래처에 전할 말은 피클이 초안을 만들고, 내가 카카오톡에서 보냅니다. 이 경계를 수업에서 분명히 말해 두면 “왜 카톡으로 안 보내지?”라는 질문이 줄어듭니다.</p>
+    </div>
+
+    <h3 id="b2-5-3">5.3 &nbsp;피클이 하지 않는 세 가지</h3>
+    <p>첫째, 카카오톡·문자처럼 앱 안에서만 되는 발송은 하지 않습니다. 둘째, 공동인증서나 PASS로 하는 본인인증은 내가 합니다. 셋째, 결제 비밀번호 입력과 카드 승인은 내 몫입니다. 이 셋은 기능이 모자라서가 아니라, 사람이 확인해야 하는 지점이라서 그렇습니다. 수강생에게는 이렇게 말해 주십시오. “이 셋은 피클이 못 하는 게 아니라, 내가 해야 하는 겁니다.”</p>
+  </section>
+
+  <!-- ================= 6장 ================= -->
+  <section class="ch" id="b2-6">
+    <span class="num">6장</span>
+    <h2 class="ch-t">강의 현장 실습 · 설치 직후 15분 점검표</h2>
+
+    <h3 id="b2-6-1">6.1 &nbsp;수강생 배포용 점검표</h3>
+    <p>이 표는 그대로 인쇄해 나눠 주십시오. 위에서부터 하나씩 지우며 따라 하면 15분입니다. 오른쪽 칸은 본인이 직접 표시합니다.</p>
+    <div class="chk-head">
+      <span class="h">설치 직후 15분 점검표<span class="where" style="display:block;font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:0">순서 · 점검 항목 · 화면 위치</span></span>
+      <span class="cnt" id="cnt-b" data-total="12">0 / 12</span>
+      <button class="chk-reset" type="button" data-reset="chk-b">표시 지우기</button>
+    </div>
+    <ul class="chk numbered" id="chk-b">
+      <li><label><input type="checkbox"><span>피클 설치와 로그인을 마쳤다<em class="where">앱 첫 화면</em></span></label></li>
+      <li><label><input type="checkbox"><span>구글 계정을 연결했다<em class="where">나의 피클 → 연결된 앱 및 서비스</em></span></label></li>
+      <li><label><input type="checkbox"><span>드라이브에 폴더 네 개를 만들었다<em class="where">드라이브 앱</em></span></label></li>
+      <li><label><input type="checkbox"><span>“이번 주 일정 알려 줘”에 답이 나왔다<em class="where">기본 채팅</em></span></label></li>
+      <li><label><input type="checkbox"><span>네이버 메일을 전용 비밀번호로 연결했다<em class="where">연결된 앱 및 서비스</em></span></label></li>
+      <li><label><input type="checkbox"><span>“어제 온 메일 요약해 줘”에 답이 나왔다<em class="where">기본 채팅</em></span></label></li>
+      <li><label><input type="checkbox"><span>위치·연락처·캘린더 권한을 허용했다<em class="where">휴대폰 설정 → 앱 권한</em></span></label></li>
+      <li><label><input type="checkbox"><span>“가족 연락처에서 번호 찾아 줘”에 답이 나왔다<em class="where">기본 채팅</em></span></label></li>
+      <li><label><input type="checkbox"><span>내가 매주 쓰는 서비스 하나를 추가로 연결했다<em class="where">연결된 앱 및 서비스</em></span></label></li>
+      <li><label><input type="checkbox"><span>자주 쓰는 쇼핑몰 로그인을 등록했다<em class="where">연결된 앱 및 서비스</em></span></label></li>
+      <li><label><input type="checkbox"><span>결제 수단을 등록하고 기기 잠금을 확인했다<em class="where">나의 피클 → 연결된 결제 수단</em></span></label></li>
+      <li><label><input type="checkbox"><span>정보 공개 범위 설정을 열어 일정 공개를 정했다<em class="where">나의 피클 → 정보 공개 범위 설정</em></span></label></li>
+    </ul>
+
+    <h3 id="b2-6-2">6.2 &nbsp;강사용 진행 팁</h3>
+    <p>수업에서 시간이 가장 많이 새는 곳은 설명이 아니라 권한 팝업입니다. 아래 네 가지만 미리 준비하시면 15분 안에 끝납니다.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>상황</th><th>대응</th></tr></thead>
+        <tbody>
+          <tr><td data-th="상황" class="q">권한 팝업이 안 뜬다</td><td data-th="대응">휴대폰 설정의 앱 권한 화면에서 직접 켠다</td></tr>
+          <tr><td data-th="상황" class="q">네이버 2단계 인증에서 막힌다</td><td data-th="대응">휴대폰 인증 후 전용 비밀번호를 발급하는 순서로 같이 진행한다</td></tr>
+          <tr><td data-th="상황" class="q">“어제 메일”에 답이 없다</td><td data-th="대응">연결은 되었는지, 권한은 켜졌는지 두 가지를 차례로 본다</td></tr>
+          <tr><td data-th="상황" class="q">손이 느린 수강생이 있다</td><td data-th="대응">1단계만 마치게 하고 나머지는 과제로 넘긴다</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>설명은 3분, 실습은 10분, 확인은 2분으로 잡으십시오. 실습 중에는 강사 화면을 띄워 두고, 진도가 느린 자리부터 찾아가면 됩니다.</p>
+
+    <h3 id="b2-6-3">6.3 &nbsp;수업 뒤 일주일</h3>
+    <p>3일째에 접근 기록을 한 번 열어 보십시오. 예상하지 못한 사용이 없는지 확인하는 것만으로 초기의 실수가 대부분 걸러집니다. 7일째에는 연결을 한 번 정리합니다. 그동안 쓰지 않은 연결은 끊고, 자주 쓴 연결만 남깁니다. 한 달째에는 처음 만든 폴더 네 개가 여전히 쓰이고 있는지 봅니다. 쓰지 않는 폴더는 지우고, 새로 필요한 폴더를 하나 더합니다.</p>
+    <p>이 세 번의 점검이면 피클은 내 생활에 맞춰집니다. 세팅은 한 번 하고 끝나는 일이 아니라, 한 달에 한 번 5분씩 다듬는 일입니다.</p>
+  </section>
+
+  <!-- ================= 맺음말 ================= -->
+  <section class="ch" id="b2-end">
+    <h2 class="ch-t">맺음말</h2>
+    <p>피클을 잘 쓰는 사람과 못 쓰는 사람의 차이는 성격이나 나이가 아닙니다. 연결을 먼저 했는가, 그리고 무엇이 남는지 알고 했는가의 차이입니다. 오늘의 15분으로 피클은 “말이 통하는 비서”가 됩니다.</p>
+    <p>다만 연결은 편의를 위한 것입니다. 편해질수록 무엇이 내 계정에 남는지 한 번씩 확인하십시오. 한 달에 한 번 접근 기록을 열고, 일 년에 한 번 연결을 정리하면 충분합니다. 그 두 번이면 오래, 안전하게 쓸 수 있습니다.</p>
+    <p style="margin-top:26px;text-indent:0"><b>최학룡 (최디터)</b><br><span style="font-size:15px;color:var(--muted)">2026년 11월 · 손안의 AI 에이전트 실전 교재 설치·연결편</span></p>
+  </section>
+
+  <!-- ================= 부록 ================= -->
+  <section class="ch" id="b2-app">
+    <span class="num">부록</span>
+    <h2 class="ch-t">수강생 질문 다섯 가지</h2>
+    <div class="faqs">
+      <details class="faq" open>
+        <summary>Q1. 피클이 내 메일을 전부 읽나요.</summary>
+        <div class="a">연결한 계정에서 답을 만드는 데 필요한 내용을 읽습니다. 읽은 내용은 대화와 기억, 작업 기록에 남을 수 있습니다. 읽지 않게 하려면 그 계정의 연결을 끊거나, 정보 공개 범위 설정에서 다른 사람과의 공유 범위를 좁히십시오. 연결을 끊어도 이미 남은 기록은 지워지지 않는다는 점을 함께 기억하십시오.</div>
+      </details>
+      <details class="faq">
+        <summary>Q2. 회사 메일도 연결해도 되나요.</summary>
+        <div class="a">관리자가 허용한 범위까지만 연결됩니다. 회사 계정에는 회사 자료와 거래처 정보가 함께 들어 있으니, 회사 규정을 먼저 확인하십시오. 개인 계정과 회사 계정을 한 기기에 섞어 쓰신다면 업무용 하나만 연결하는 편이 안전합니다.</div>
+      </details>
+      <details class="faq">
+        <summary>Q3. 휴대폰을 바꾸면 저장한 카드와 로그인은 어떻게 되나요.</summary>
+        <div class="a">암호를 푸는 열쇠가 기기에 있으므로, 새 기기에서 열쇠를 옮기거나 다시 만드는 절차가 필요합니다. 연결 화면이나 결제 수단 화면 위쪽의 열쇠 안내가 복구 절차를 알려 줍니다. 기기를 바꾸기 전에 그 화면을 한 번 열어 두십시오.</div>
+      </details>
+      <details class="faq">
+        <summary>Q4. 카드 정보가 새면 어떻게 하나요.</summary>
+        <div class="a">저장은 암호화되고 AI에게는 값이 보이지 않습니다. 실제 결제 순간에만 값이 채워집니다. 걱정되면 연결된 결제 수단에서 그 카드를 지우고, 카드사에 최근 승인 내역을 확인하십시오. 등록한 카드는 앱에서 언제든 지울 수 있습니다.</div>
+      </details>
+      <details class="faq">
+        <summary>Q5. 연결을 다 끊으면 피클을 못 쓰나요.</summary>
+        <div class="a">기본 대화는 그대로 됩니다. 다만 내 메일과 일정, 파일을 근거로 하는 일은 못 합니다. 연결은 편의를 위한 것이지 사용 조건이 아닙니다. 필요한 것만 연결하고, 나머지는 나중에 붙이십시오.</div>
+      </details>
+    </div>
+  </section>
+</div>
+</article>
+<footer class="foot">
+  <div class="doc">
+    <p class="sig">최학룡 (최디터) · 손안의 AI 에이전트 실전 교재</p>
+    <p style="margin:0">제1부 「피클 AI 실전 안전 세팅과 금지·주의사항 완벽 가이드」와 설치·연결편 「피클 설치 후 기본 연결 앱과 계정 정리 가이드」를 웹에서 읽기 좋게 한 페이지로 묶었습니다. 두 편은 위쪽 탭에서 바꿔 볼 수 있고, 복사용 상자는 붙여 넣을 문장만 그대로 담았습니다.</p>
+    <div class="links">
+      <a href="https://musodari.github.io/">← 최학룡 모바일 명함</a>
+      <a href="#b1-cover" data-book="a">제1부 처음부터 읽기</a>
+      <a href="#b2-cover" data-book="b">설치·연결편 처음부터 읽기</a>
+    </div>
+    <p class="sync">2026-11-21 기준 · Google Drive 원본 연동 (제1부 원본 수정 2026-11-20, 설치·연결편 원본 수정 2026-11-17)<br>
+    강의·교재용 · 무단 전재를 삼가 주세요. 문의는 모바일 명함의 연락처로 주시면 됩니다.</p>
+  </div>
+</footer>
+
+  </main>
+</div>
+
+<button class="top-top" id="totop" type="button" aria-label="맨 위로">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+  var doc = document;
+  var books = { a: doc.getElementById("book-a"), b: doc.getElementById("book-b") };
+  var tabs = { a: doc.getElementById("tab-a"), b: doc.getElementById("tab-b") };
+  var tocs = { a: doc.getElementById("toc-a"), b: doc.getElementById("toc-b") };
+  var hint = doc.getElementById("toc-hint");
+  var current = "a";
+
+  function setBook(which, scroll) {
+    if (!books[which]) return;
+    current = which;
+    Object.keys(books).forEach(function (k) {
+      var on = (k === which);
+      books[k].hidden = !on;
+      books[k].classList.toggle("is-on", on);
+      tabs[k].setAttribute("aria-selected", on ? "true" : "false");
+      tocs[k].hidden = !on;
+    });
+    hint.textContent = (which === "a") ? "제1부" : "설치·연결편";
+    doc.documentElement.setAttribute("data-book", which);
+    try { localStorage.setItem("pk_book", which); } catch (e) {}
+    if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
+    paintTOC();
+  }
+
+  Object.keys(tabs).forEach(function (k) {
+    tabs[k].addEventListener("click", function () {
+      setBook(k, false);
+      var target = doc.getElementById(k === "a" ? "b1-cover" : "b2-cover");
+      if (target) {
+        closeDrawer();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", k === "a" ? location.pathname + location.search : "#b2-cover");
+      }
+    });
+  });
+
+  doc.addEventListener("click", function (ev) {
+    var a = ev.target.closest ? ev.target.closest("a") : null;
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    if (href.charAt(0) !== "#") return;
+    var need = href.indexOf("#b2-") === 0 ? "b" : (href.indexOf("#b1-") === 0 ? "a" : null);
+    if (need && need !== current) setBook(need, false);
+    closeDrawer();
+  });
+
+  /* ---- mobile drawer ---- */
+  var drawerBtn = doc.getElementById("tocbtn");
+  var drawerClose = doc.getElementById("tocclose");
+  function openDrawer() {
+    doc.body.classList.add("toc-open");
+    drawerBtn.setAttribute("aria-expanded", "true");
+  }
+  function closeDrawer() {
+    doc.body.classList.remove("toc-open");
+    drawerBtn.setAttribute("aria-expanded", "false");
+  }
+  drawerBtn.addEventListener("click", function () {
+    if (doc.body.classList.contains("toc-open")) closeDrawer(); else openDrawer();
+  });
+  drawerClose.addEventListener("click", closeDrawer);
+  doc.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDrawer(); });
+
+  /* ---- toast ---- */
+  var toast = doc.getElementById("toast");
+  var toastTimer = null;
+  function say(msg) {
+    toast.textContent = msg;
+    toast.classList.add("on");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove("on"); }, 1900);
+  }
+
+  /* ---- copy ---- */
+  function textOf(id) {
+    var el = doc.getElementById(id);
+    if (!el) return "";
+    var clone = el.cloneNode(true);
+    var tails = clone.querySelectorAll(".tail");
+    for (var i = 0; i < tails.length; i++) tails[i].parentNode.removeChild(tails[i]);
+    var blocks = [];
+    var kids = clone.children;
+    if (!kids.length) blocks.push(clone.textContent);
+    for (var j = 0; j < kids.length; j++) {
+      var t = kids[j].innerText || kids[j].textContent || "";
+      t = t.replace(/\u00a0/g, " ").replace(/[ \t]+$/gm, "").trim();
+      if (t) blocks.push(t);
+    }
+    return blocks.join("\n\n").trim();
+  }
+
+  function legacyCopy(text) {
+    var ta = doc.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    ta.style.top = "0";
+    doc.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = doc.execCommand("copy"); } catch (e) { ok = false; }
+    doc.body.removeChild(ta);
+    return ok;
+  }
+
+  function copy(text, btn) {
+    function done(ok) {
+      if (ok) {
+        var label = btn.getAttribute("data-label") || btn.innerHTML;
+        btn.setAttribute("data-label", label);
+        btn.classList.add("done");
+        btn.innerHTML = "복사되었습니다";
+        setTimeout(function () {
+          btn.classList.remove("done");
+          btn.innerHTML = btn.getAttribute("data-label");
+        }, 1900);
+        say("복사되었습니다");
+      } else {
+        say("복사하지 못했습니다. 문장을 길게 눌러 직접 복사해 주세요.");
+      }
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(legacyCopy(text)); });
+    } else {
+      done(legacyCopy(text));
+    }
+  }
+
+  doc.addEventListener("click", function (ev) {
+    var btn = ev.target.closest ? ev.target.closest(".js-copy, .js-copy-text") : null;
+    if (!btn) return;
+    ev.preventDefault();
+    var text = btn.hasAttribute("data-text") ? btn.getAttribute("data-text") : textOf(btn.getAttribute("data-target"));
+    if (!text) { say("복사할 내용을 찾지 못했습니다."); return; }
+    copy(text, btn);
+  });
+
+  /* ---- checklists ---- */
+  function updateCount(list) {
+    var boxes = list.querySelectorAll("input[type=checkbox]");
+    var on = 0;
+    var state = [];
+    for (var i = 0; i < boxes.length; i++) { state.push(boxes[i].checked); if (boxes[i].checked) on++; }
+    var cnt = doc.getElementById(list.id === "chk-a" ? "cnt-a" : "cnt-b");
+    if (cnt) {
+      cnt.textContent = on + " / " + boxes.length;
+      cnt.classList.toggle("done", on === boxes.length);
+    }
+    try { localStorage.setItem("pk_" + list.id, JSON.stringify(state)); } catch (e) {}
+  }
+
+  ["chk-a", "chk-b"].forEach(function (id) {
+    var list = doc.getElementById(id);
+    if (!list) return;
+    var saved = null;
+    try { saved = JSON.parse(localStorage.getItem("pk_" + id) || "null"); } catch (e) {}
+    var boxes = list.querySelectorAll("input[type=checkbox]");
+    if (saved && saved.length === boxes.length) {
+      for (var i = 0; i < boxes.length; i++) boxes[i].checked = !!saved[i];
+    }
+    list.addEventListener("change", function () { updateCount(list); });
+    updateCount(list);
+  });
+
+  doc.addEventListener("click", function (ev) {
+    var r = ev.target.closest ? ev.target.closest(".chk-reset") : null;
+    if (!r) return;
+    var list = doc.getElementById(r.getAttribute("data-reset"));
+    if (!list) return;
+    var boxes = list.querySelectorAll("input[type=checkbox]");
+    for (var i = 0; i < boxes.length; i++) boxes[i].checked = false;
+    updateCount(list);
+    say("표시를 지웠습니다");
+  });
+
+  /* ---- scroll spy + progress + top button ---- */
+  var tocLinks = Array.prototype.slice.call(doc.querySelectorAll(".toc a[href^='#']"));
+  var progress = doc.getElementById("progress");
+  var totop = doc.getElementById("totop");
+
+  function paintTOC() {
+    var best = null;
+    var bestTop = -Infinity;
+    var marks = [];
+    Object.keys(books).forEach(function (k) {
+      var bt = books[k];
+      if (bt.hidden) return;
+      var hs = bt.querySelectorAll("h2.ch-t, h3");
+      for (var i = 0; i < hs.length; i++) marks.push(hs[i]);
+    });
+    for (var i = 0; i < marks.length; i++) {
+      var top = marks[i].getBoundingClientRect().top;
+      if (top < 150 && top > bestTop) { bestTop = top; best = marks[i]; }
+    }
+    for (var j = 0; j < tocLinks.length; j++) {
+      var link = tocLinks[j];
+      var hid = (link.getAttribute("href") || "").slice(1);
+      var on = best && best.id && best.id === hid;
+      link.classList.toggle("on", !!on);
+      if (on) link.setAttribute("aria-current", "true"); else link.removeAttribute("aria-current");
+    }
+    var h = doc.documentElement;
+    var max = (h.scrollHeight - h.clientHeight) || 1;
+    if (progress) progress.style.width = Math.min(100, Math.max(0, (h.scrollTop / max) * 100)) + "%";
+    if (totop) totop.classList.toggle("on", h.scrollTop > 700);
+  }
+
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () { paintTOC(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener("resize", paintTOC);
+  totop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+  /* ---- boot ---- */
+  var start = "a";
+  if (location.hash.indexOf("#b2") === 0) start = "b";
+  else if (location.hash.indexOf("#b1") === 0) start = "a";
+  else {
+    try { if (localStorage.getItem("pk_book") === "b") start = "b"; } catch (e) {}
+  }
+  setBook(start, false);
+  paintTOC();
+
+  if (location.hash && location.hash.length > 1) {
+    var target = doc.getElementById(location.hash.slice(1));
+    if (target) setTimeout(function () { target.scrollIntoView({ block: "start" }); }, 60);
+  }
+})();
+</script>
+</body>
+</html>
