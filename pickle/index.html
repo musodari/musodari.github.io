@@ -1689,7 +1689,10 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
     ch.classList.toggle("open", !!open);
   }
   function secParts(sec) {
-    var h3 = kid(sec, "h3");
+    var h3 = null;
+    for (var i = 0; i < sec.children.length; i++) {
+      if (sec.children[i].tagName === "H3") { h3 = sec.children[i]; break; }
+    }
     return { h3: h3, btn: h3 ? h3.querySelector(".sec-h") : null, body: kid(sec, "sec-body") };
   }
   function isSecOpen(sec) { var b = kid(sec, "sec-body"); return !!b && !b.hidden; }
