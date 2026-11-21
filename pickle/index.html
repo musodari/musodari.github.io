@@ -337,6 +337,19 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
 .faq.noq summary::before{display:none}
 .faq .a{padding:15px 18px 17px;font-size:16.2px;line-height:1.8}
 .faq .a .al{font-weight:800;color:var(--navy);margin-right:5px}
+/* 답변 끝 접기 버튼 (스크립트가 자동으로 넣는다) */
+.faq-close{
+  display:flex;align-items:center;gap:7px;width:fit-content;
+  margin:16px 0 0 auto;padding:11px 17px;min-height:44px;
+  border:1px solid #d9ceba;border-radius:999px;background:#faf7f0;color:var(--navy);
+  font-family:inherit;font-size:14.5px;font-weight:800;line-height:1;letter-spacing:-.01em;
+  cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;
+  transition:background .15s,border-color .15s,color .15s;
+}
+.faq-close .ar{font-size:10.5px;color:var(--terra);line-height:1;transform:translateY(-1px)}
+.faq-close:hover{background:#f4eee2;border-color:#c9bca5}
+.faq-close:active{background:#ece3d3}
+.faq-close:focus-visible{outline:2px solid var(--navy-soft);outline-offset:2px}
 
 /* ---------- chapter close ---------- */
 .take{
@@ -544,6 +557,7 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
   h2.ch-t,h3{break-after:avoid;page-break-after:avoid}
   a{color:inherit;text-decoration:none}
   .copy-h .btn-copy{display:none}
+  .faq-close{display:none!important}
   .acc-boot section.ch > :not(h2):not(span.num){display:block!important}
   /* 인쇄·PDF에서는 모든 장과 절을 그대로 펼쳐 낸다 */
   .acc-tools,.chev-box,.acc-all{display:none!important}
@@ -1091,7 +1105,7 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
 
     <h3 id="b1-3-5">3.5 &nbsp;자주 묻는 세 가지</h3>
     <div class="faqs">
-      <details class="faq" open>
+      <details class="faq">
         <summary>연결을 끊으면 예전 대화도 지워지나요?</summary>
         <div class="a"><span class="al">A.</span> 지워지지 않습니다. 연결을 해제해도 이미 나눈 대화와 기억에 남은 내용은 그대로 남습니다. 지우고 싶은 이야기는 대화에서 직접 지워 달라고 요청하세요.</div>
       </details>
@@ -1525,7 +1539,7 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
     <span class="num">부록</span>
     <h2 class="ch-t">수강생 질문 다섯 가지</h2>
     <div class="faqs">
-      <details class="faq noq" open>
+      <details class="faq noq">
         <summary>Q1. 피클이 내 메일을 전부 읽나요.</summary>
         <div class="a">연결한 계정에서 답을 만드는 데 필요한 내용을 읽습니다. 읽은 내용은 대화와 기억, 작업 기록에 남을 수 있습니다. 읽지 않게 하려면 그 계정의 연결을 끊거나, 정보 공개 범위 설정에서 다른 사람과의 공유 범위를 좁히십시오. 연결을 끊어도 이미 남은 기록은 지워지지 않는다는 점을 함께 기억하십시오.</div>
       </details>
@@ -1898,6 +1912,51 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
     doc.documentElement.className = doc.documentElement.className.replace(" acc-boot", "");
   }
 
+  /* ================= Q&A: 한 번에 하나만 펼치기 + 답변 끝 접기 버튼 ================= */
+  var printPrep = false;
+
+  function buildFaqs(root) {
+    qsa(".faqs", root || doc).forEach(function (group) {
+      qsa("details.faq", group).forEach(function (d) {
+        if (d.getAttribute("data-faq-ready")) return;
+        d.setAttribute("data-faq-ready", "1");
+
+        /* 답변 끝(하단 오른쪽)에 접기 버튼을 넣는다 */
+        var a = kid(d, "a");
+        if (a && !a.querySelector(".faq-close")) {
+          var btn = doc.createElement("button");
+          btn.type = "button";
+          btn.className = "faq-close";
+          btn.setAttribute("aria-label", "이 답변 접기");
+          btn.appendChild(doc.createTextNode("접기"));
+          var ar = doc.createElement("span");
+          ar.className = "ar";
+          ar.setAttribute("aria-hidden", "true");
+          ar.textContent = "▲";
+          btn.appendChild(ar);
+          a.appendChild(btn);
+        }
+
+        /* 같은 .faqs 안에서는 하나만 열린다 */
+        d.addEventListener("toggle", function () {
+          if (!d.open || printPrep || d.hasAttribute("data-print-open")) return;
+          var g = d.parentNode;
+          if (g) {
+            qsa("details.faq", g).forEach(function (o) {
+              if (o !== d && o.open && !o.hasAttribute("data-print-open")) o.open = false;
+            });
+          }
+          /* 위쪽 답변이 접혀 화면이 밀려도 방금 누른 제목은 상단 바 아래에 남긴다 */
+          var s = d.querySelector("summary");
+          if (s) {
+            keepInView(s);
+            window.requestAnimationFrame(function () { keepInView(s); });
+          }
+        });
+      });
+    });
+  }
+
   function goTo(id, smooth) {
     var el = doc.getElementById(id);
     if (!el || !el.closest) return false;
@@ -1926,6 +1985,16 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
 
   doc.addEventListener("click", function (ev) {
     if (!ev.target.closest) return;
+    var fclose = ev.target.closest(".faq-close");
+    if (fclose) {
+      var fdet = fclose.closest("details");
+      if (fdet) {
+        fdet.open = false;
+        var fs = fdet.querySelector("summary");
+        if (fs) keepInView(fs);
+      }
+      return;
+    }
     var all = ev.target.closest(".acc-all");
     if (all) {
       var book = all.closest(".book");
@@ -1982,6 +2051,7 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
 
   /* 인쇄·PDF에서는 원래 열려 있지 않던 접힘 상자도 함께 편다 */
   window.addEventListener("beforeprint", function () {
+    printPrep = true;
     qsa("details").forEach(function (d) {
       if (!d.open) { d.open = true; d.setAttribute("data-print-open", "1"); }
     });
@@ -1991,6 +2061,7 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
       d.open = false;
       d.removeAttribute("data-print-open");
     });
+    setTimeout(function () { printPrep = false; }, 400);
   });
 
   /* ---- toast ---- */
@@ -2151,6 +2222,7 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
 
   /* ---- boot ---- */
   buildAccordion();
+  buildFaqs();
   var start = "a";
   if (location.hash.indexOf("#b2") === 0) start = "b";
   else if (location.hash.indexOf("#b1") === 0) start = "a";
