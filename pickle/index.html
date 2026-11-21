@@ -94,7 +94,7 @@ a{color:var(--navy-soft)}
 /* ---------- layout ---------- */
 .shell{
   max-width:1200px;margin:0 auto;padding:0 22px 90px;
-  display:grid;grid-template-columns:262px minmax(0,1fr);gap:44px;align-items:start;
+  display:grid;grid-template-columns:262px minmax(0,790px);gap:44px;align-items:start;justify-content:center;
 }
 main{min-width:0;padding-top:6px}
 .doc{max-width:790px}
@@ -121,6 +121,7 @@ main{min-width:0;padding-top:6px}
 
 /* ---------- hero ---------- */
 .hero{
+  scroll-margin-top:84px;
   background:linear-gradient(165deg,#fff 0%,#fdfaf3 62%,#fbf6ec 100%);
   border:1px solid var(--line);border-radius:20px;
   padding:38px 34px 32px;margin:26px 0 8px;box-shadow:var(--shadow);
@@ -333,6 +334,7 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
 .faq summary::after{content:"＋";margin-left:auto;color:var(--terra);font-weight:800;font-size:15px}
 .faq[open] summary::after{content:"－"}
 .faq[open] summary{border-bottom:1px solid var(--line-soft);background:#fcfaf6}
+.faq.noq summary::before{display:none}
 .faq .a{padding:15px 18px 17px;font-size:16.2px;line-height:1.8}
 .faq .a .al{font-weight:800;color:var(--navy);margin-right:5px}
 
@@ -414,8 +416,9 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
 }
 @media(max-width:680px){
   .tabs{gap:2px;padding:3px}
-  .tab{padding:7px 11px;font-size:13.5px}
-  .tab .no{display:none}
+  .tab{padding:8px 12px;font-size:13.5px;gap:0}
+  .tab .tl{display:none}
+  .tab .no{font-size:13px}
   table.tbl,table.tbl thead,table.tbl tbody,table.tbl tr,table.tbl td,table.tbl th{display:block;width:100%}
   table.tbl thead{display:none}
   table.tbl tr{border-bottom:1px solid var(--line);padding:4px 0}
@@ -434,6 +437,10 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
   .copy-b{padding:15px 15px 13px;font-size:16.2px}
   .doc p{text-indent:.6em}
   .top-top{right:12px;bottom:16px}
+}
+@media(max-width:520px){
+  .brand{display:none}
+  .top-in{justify-content:space-between}
 }
 @media print{
   .top,.toc,.tocbtn,.toast,.top-top,.progress,.btn-copy,.chk-reset{display:none!important}
@@ -462,10 +469,10 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
     </a>
     <div class="tabs" role="tablist" aria-label="교재 편 선택">
       <button class="tab" id="tab-a" role="tab" aria-selected="true" aria-controls="book-a" data-book="a">
-        <span class="no">제1부</span>안전 세팅 · 5대 헌장
+        <span class="no">제1부</span><span class="tl">안전 세팅 · 5대 헌장</span>
       </button>
       <button class="tab" id="tab-b" role="tab" aria-selected="false" aria-controls="book-b" data-book="b">
-        <span class="no">설치·연결편</span>기본 앱 · 계정 정리
+        <span class="no">설치·연결편</span><span class="tl">기본 앱 · 계정 정리</span>
       </button>
     </div>
     <button class="tocbtn" id="tocbtn" aria-expanded="false" aria-controls="toc">
@@ -1403,23 +1410,23 @@ table.tbl td.q{font-weight:700;color:var(--navy-deep)}
     <span class="num">부록</span>
     <h2 class="ch-t">수강생 질문 다섯 가지</h2>
     <div class="faqs">
-      <details class="faq" open>
+      <details class="faq noq" open>
         <summary>Q1. 피클이 내 메일을 전부 읽나요.</summary>
         <div class="a">연결한 계정에서 답을 만드는 데 필요한 내용을 읽습니다. 읽은 내용은 대화와 기억, 작업 기록에 남을 수 있습니다. 읽지 않게 하려면 그 계정의 연결을 끊거나, 정보 공개 범위 설정에서 다른 사람과의 공유 범위를 좁히십시오. 연결을 끊어도 이미 남은 기록은 지워지지 않는다는 점을 함께 기억하십시오.</div>
       </details>
-      <details class="faq">
+      <details class="faq noq">
         <summary>Q2. 회사 메일도 연결해도 되나요.</summary>
         <div class="a">관리자가 허용한 범위까지만 연결됩니다. 회사 계정에는 회사 자료와 거래처 정보가 함께 들어 있으니, 회사 규정을 먼저 확인하십시오. 개인 계정과 회사 계정을 한 기기에 섞어 쓰신다면 업무용 하나만 연결하는 편이 안전합니다.</div>
       </details>
-      <details class="faq">
+      <details class="faq noq">
         <summary>Q3. 휴대폰을 바꾸면 저장한 카드와 로그인은 어떻게 되나요.</summary>
         <div class="a">암호를 푸는 열쇠가 기기에 있으므로, 새 기기에서 열쇠를 옮기거나 다시 만드는 절차가 필요합니다. 연결 화면이나 결제 수단 화면 위쪽의 열쇠 안내가 복구 절차를 알려 줍니다. 기기를 바꾸기 전에 그 화면을 한 번 열어 두십시오.</div>
       </details>
-      <details class="faq">
+      <details class="faq noq">
         <summary>Q4. 카드 정보가 새면 어떻게 하나요.</summary>
         <div class="a">저장은 암호화되고 AI에게는 값이 보이지 않습니다. 실제 결제 순간에만 값이 채워집니다. 걱정되면 연결된 결제 수단에서 그 카드를 지우고, 카드사에 최근 승인 내역을 확인하십시오. 등록한 카드는 앱에서 언제든 지울 수 있습니다.</div>
       </details>
-      <details class="faq">
+      <details class="faq noq">
         <summary>Q5. 연결을 다 끊으면 피클을 못 쓰나요.</summary>
         <div class="a">기본 대화는 그대로 됩니다. 다만 내 메일과 일정, 파일을 근거로 하는 일은 못 합니다. 연결은 편의를 위한 것이지 사용 조건이 아닙니다. 필요한 것만 연결하고, 나머지는 나중에 붙이십시오.</div>
       </details>
